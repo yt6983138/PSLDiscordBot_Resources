@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<script src="./Common.js"></script>
+		<link rel="stylesheet" type="text/css" href="./Common.css" />
+
+		<style>
+			:root {
+				--ConvertFromWidth: 934;
+
+				font-size: calc(100vw / var(--ConvertFromWidth));
+				overflow-x: hidden;
+				overflow-y: hidden;
+			}
+			body {
+				padding: 0%;
+				margin: 0%;
+				background-image: var(--MissingTexture);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: cover;
+			}
+			p {
+				margin: 0%;
+			}
+
+			.white {
+				color: white;
+			}
+
+			.TextSize12 {
+				font-size: 12rem;
+			}
+			.TextSize16 {
+				font-size: 16rem;
+			}
+			.TextSize22 {
+				font-size: 22rem;
+			}
+			.TextSize32 {
+				font-size: 32rem;
+			}
+			.TextSize36 {
+				font-size: 36rem;
+			}
+			.TextSize52 {
+				font-size: 52rem;
+			}
+			.TextSize64 {
+				font-size: 64rem;
+			}
+
+			#Main {
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="Main"></div>
+
+		<script>
+			async function Initialize() {
+				await InitializePSLRender();
+
+				SetReady(true);
+			}
+			Initialize();
+		</script>
+	</body>
+</html>

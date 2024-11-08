@@ -1,0 +1,426 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <script src="./Common.js"></script>
+    <link rel="stylesheet" type="text/css" href="./Common.css"/>
+
+    <style>
+        :root {
+            --ConvertFromWidth: 304;
+
+            font-size: calc(100vw / var(--ConvertFromWidth));
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+
+        body {
+            padding: 0%;
+            margin: 0%;
+            background-image: var(--MissingTexture);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        p {
+            margin: 0%;
+        }
+
+        .white {
+            color: white;
+        }
+
+        .TextSize12 {
+            font-size: 12rem;
+        }
+
+        .TextSize16 {
+            font-size: 16rem;
+        }
+
+        .TextSize22 {
+            font-size: 22rem;
+        }
+
+        .TextSize32 {
+            font-size: 32rem;
+        }
+
+        .TextSize36 {
+            font-size: 36rem;
+        }
+
+        .TextSize52 {
+            font-size: 52rem;
+        }
+
+        .TextSize64 {
+            font-size: 64rem;
+        }
+
+        #Main {
+            aspect-ratio: 304 / 570;
+            background-color: rgba(0, 0, 0, 0.33);
+            backdrop-filter: blur(10rem);
+        }
+
+        #TopTextBackground {
+            top: 12rem;
+            position: relative;
+            width: 175rem;
+            height: 22rem;
+            clip-path: polygon(0% 0%, 100% 0%, calc(100% - 7rem) 100%, 0% 100%);
+            background-color: rgba(0, 0, 0, 0.4);
+            text-align: left;
+            align-items: center;
+
+            & p {
+                left: 10rem;
+                top: -2rem;
+                position: absolute;
+            }
+
+            & #Line {
+                position: absolute;
+                width: 175rem;
+                height: 22rem;
+                background-color: white;
+                clip-path: polygon(calc(100% - 2rem) 0%, 100% 0%, calc(100% - 7rem) 100%, calc(100% - 9rem) 100%);
+            }
+        }
+
+        #Illustration {
+            position: absolute;
+            top: 50rem;
+            left: 24rem;
+            width: 256rem;
+            height: 135rem;
+            background: var(--MissingTexture);
+        }
+
+        #IllustrationDescriptionDiv {
+            position: absolute;
+            top: 198rem;
+            height: 44rem;
+            width: 286rem;
+            align-items: center;
+            align-content: center;
+            background-color: rgba(0, 0, 0, 0.4);
+            clip-path: polygon(0% 0%, 100% 0%, calc(100% - 11rem) 100%, 0% 100%);
+
+            & #IllustrationDescription {
+                position: relative;
+                left: 10rem;
+                line-height: 20rem;
+            }
+
+            & #DescLine {
+                top: 0%;
+                height: 44rem;
+                width: 286rem;
+                position: absolute;
+                background-color: white;
+                clip-path: polygon(calc(100% - 2rem) 0%, 100% 0%, calc(100% - 11rem) 100%, calc(100% - 13rem) 100%);
+            }
+        }
+
+        #Scores {
+            position: absolute;
+            top: 254rem;
+            width: 100%;
+            height: fit-content;
+
+            & #ScoreCell0 > .StatusBackground {
+                background-color: rgba(61, 132, 51, 0.67);
+            }
+
+            & #ScoreCell1 > .StatusBackground {
+                background-color: rgba(34, 87, 135, 0.67);
+            }
+
+            & #ScoreCell2 > .StatusBackground {
+                background-color: rgba(143, 34, 26, 0.67);
+            }
+
+            & #ScoreCell3 > .StatusBackground {
+                background-color: rgba(49, 49, 49, 0.67);
+            }
+
+            & tr {
+                position: relative;
+                height: 60rem;
+                width: 100%;
+                overflow: visible;
+
+                & p {
+                    position: absolute;
+                    color: white;
+                    font-size: 16rem;
+                }
+
+                & .CCAndDiff {
+                    color: black !important;
+                    top: -4rem;
+                }
+
+                & .Score {
+                    top: 13rem;
+                }
+
+                & .Acc {
+                    top: 30rem;
+                }
+
+                & .Rks {
+                    top: 47rem;
+                }
+
+                & .DecorationLine {
+                    position: absolute;
+                    top: 0;
+                    background-color: white;
+                    width: 19rem;
+                    height: 68rem;
+                    clip-path: polygon(17rem 0, 19rem 0, 2rem 100%, 0 100%);
+                }
+
+                & .DecorationBackground {
+                    position: absolute;
+                    width: 128rem;
+                    height: 68rem;
+                    background-color: rgba(0, 0, 0, 0.4);
+
+                    & .CCDiffBackground {
+                        background-color: white;
+                        position: absolute;
+                        width: 100%;
+                        height: 18rem;
+                    }
+
+                    & hr {
+                        width: 100%;
+                        height: 0;
+                        margin-top: 16.5rem;
+                        border: none;
+                        margin-inline: 0;
+                        border-bottom: 1rem solid rgba(0, 0, 0, 0.6);
+                    }
+                }
+
+                & .StatusBackground {
+                    position: absolute;
+                    top: 35rem;
+                    width: 42rem;
+                    height: 33rem;
+                    border-right: 1rem solid white;
+                    clip-path: polygon(8rem 0, 100% 0, 100% 100%, 0 100%);
+                }
+
+                & .Status {
+                    position: absolute;
+                    width: 32rem;
+                    height: 32rem;
+                    top: 35rem;
+                }
+            }
+
+            & .Left {
+                & p {
+                    left: 12rem;
+                }
+
+                & .DecorationLine {
+                    left: 109rem;
+                }
+
+                & .DecorationBackground {
+                    left: 0;
+                    clip-path: polygon(0 0, 100% 0, calc(100% - 17rem) 100%, 0 100%);
+                }
+
+                & .StatusBackground {
+                    left: 110rem;
+                }
+
+                & .Status {
+                    left: 117rem;
+                }
+            }
+
+            & .Right {
+                & p {
+                    text-align: right;
+                    right: 12rem;
+                }
+
+                & .DecorationLine {
+                    right: 109rem;
+                }
+
+                & .DecorationBackground {
+                    right: 0;
+                    clip-path: polygon(17rem 0, 100% 0, 100% 100%, 0 100%);
+                }
+
+                & .StatusBackground {
+                    transform: rotateZ(180deg);
+                    right: 118rem;
+                }
+
+                & .Status {
+                    right: 125rem;
+                }
+            }
+        }
+        #Advertisement {
+            position: absolute;
+            top: 474rem;
+            left: 12rem;
+            width: 100%;
+            height: fit-content;
+
+            & p {
+                color: white;
+                font-size: 12rem;
+                margin-bottom: 6rem;
+                line-height: 16rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="Main">
+    <div id="TopTextBackground">
+        <p class="TextSize16 White">RECORD_ANALYSIS</p>
+        <div id="Line"></div>
+    </div>
+
+    <img id="Illustration" class="IllustrationParallelogramMasked"/>
+    <div id="IllustrationDescriptionDiv">
+        <div id="DescLine"></div>
+        <p id="IllustrationDescription" class="TextSize16 white"></p>
+    </div>
+
+    <table id="Scores">
+    </table>
+
+    <div id="Advertisement">
+        <p>PSL DISCORD BOT</p>
+        <p>DISCORD:<br/> https://discord.gg/b6a4RjEnEC</p>
+        <p>GITHUB:<br/> https://github.com/yt6983138/PSLDiscordBot</p>
+    </div>
+</div>
+
+<script>
+    async function Initialize() {
+        await InitializePSLRender();
+
+        if (ExampleMode || window.INFO.ExtraArguments == null) {
+            window.INFO.ExtraArguments = {
+                "Searched": {
+                    "Chronostasis.黒皇帝": [
+                        {
+                            "Score": 1000000,
+                            "Accuracy": 100,
+                            "ChartConstant": 15.3,
+                            "Id": "Chronostasis.黒皇帝",
+                            "Difficulty": 2,
+                            "Status": 2,
+                            "Rks": 15.300000190734863
+                        }
+                    ]
+                }
+            }
+        }
+
+        let id = undefined;
+        for (id in window.INFO.ExtraArguments.Searched) break; // search first
+        let searchedFirstRecords = window.INFO.ExtraArguments.Searched[id];
+
+        document.body.style.backgroundImage = "url('" + GetUserBackgroundBlur() + "')";
+
+        document.getElementById("Illustration").src = GetLowResIllustrationPath(id);
+        document.getElementById("IllustrationDescription").textContent = "FOR: " + window.INFO_MAP_ID_NAME[id];
+
+        let table = document.getElementById("Scores");
+        for (let i = 0; i < 4; i++) {
+            if (id !== "Chronostasis.黒皇帝" && window.INFO_MAP_DIFFICULTY[id][i] === 0) break;
+
+            let record = SearchByDifficultyInRecords(searchedFirstRecords, i);
+
+            let tr = document.createElement("tr")
+            table.appendChild(tr);
+            tr.id = `ScoreCell${i}`;
+            if (i % 2 === 0) tr.classList.add("Left");
+            else tr.classList.add("Right");
+
+            let statusBackground = document.createElement("div");
+            let statusImage = document.createElement("img")
+            tr.appendChild(statusBackground);
+            tr.appendChild(statusImage);
+            statusBackground.classList.add("StatusBackground");
+            statusImage.classList.add("Status");
+            statusImage.src = record === null
+                ? PathJoin(window.ASSET_FOLDER, "Misc", "False.png")
+                : GetRecordRankImagePath(record);
+
+            let decorationLine = document.createElement("div");
+            let decorationBackground = document.createElement("div");
+            tr.appendChild(decorationBackground);
+            tr.appendChild(decorationLine);
+            decorationLine.classList.add("DecorationLine");
+            decorationBackground.classList.add("DecorationBackground");
+
+            let ccDiffBackground = document.createElement("div");
+            decorationBackground.appendChild(ccDiffBackground);
+            ccDiffBackground.classList.add("CCDiffBackground");
+
+            decorationBackground.appendChild(document.createElement("hr"));
+            decorationBackground.appendChild(document.createElement("hr"));
+            decorationBackground.appendChild(document.createElement("hr"));
+
+            let ccAndDiff = document.createElement("p");
+            let score = document.createElement("p");
+            let acc = document.createElement("p");
+            let rks = document.createElement("p");
+            ccAndDiff.classList.add("CCAndDiff");
+            score.classList.add("Score");
+            acc.classList.add("Acc");
+            rks.classList.add("Rks");
+            tr.appendChild(ccAndDiff);
+            tr.appendChild(score);
+            tr.appendChild(acc);
+            tr.appendChild(rks);
+            ccAndDiff.textContent = `${RecordDifficultyToName[i]} ${window.INFO_MAP_DIFFICULTY[id][i]}`;
+            score.textContent = record === null ? "000000" : record.Score.toString();
+            acc.textContent = FloatToUserPrecisionString(record === null ? 0 : record.Accuracy) + '%';
+            rks.textContent = FloatToUserPrecisionString(record === null ? 0 : record.Rks);
+
+            if (GetUserPrecisionInt() > 5) {
+                ccAndDiff.classList.add("CondensedText");
+                score.classList.add("CondensedText");
+                acc.classList.add("CondensedText");
+                rks.classList.add("CondensedText");
+            }
+        }
+
+        SetReady(true);
+    }
+
+    /**
+     *
+     * @param {GameRecord[]} records
+     * @param {Difficulty} diff
+     */
+    function SearchByDifficultyInRecords(records, diff) {
+        for (const record of records) {
+            if (record.Difficulty === diff)
+                return record;
+        }
+        return null;
+    }
+
+    Initialize();
+</script>
+</body>
+</html>
