@@ -305,12 +305,13 @@
 					height: 20rem;
 					line-height: 22rem;
 					position: absolute;
-					color: lightgray;
+					color: white;
 					font-size: 20rem;
 					padding-left: 6rem;
 					padding-right: 6rem;
-					border-left: 2rem solid lightgray;
-					border-right: 2rem solid lightgray;
+					border-left: 2rem solid white;
+					border-right: 2rem solid white;
+					mix-blend-mode: difference;
 				}
 				& #OverflowText1 {
 					left: 170rem;
@@ -322,6 +323,8 @@
 				& #OverflowLines {
 					width: 100%;
 					height: 100%;
+					mix-blend-mode: difference;
+					stroke: white;
 				}
 			}
 		</style>
@@ -374,26 +377,26 @@
 				<p id="OverflowText2" class="OverflowText"> O V E R F L O W </p>
 				<svg id="OverflowLines">
 					<line x1="0" y1="170rem"
-						x2="171rem" y2="170rem" stroke="lightgray" stroke-width="2rem"></line>
+						x2="171rem" y2="170rem" stroke-width="2rem"></line>
 					<line x1="327rem" y1="170rem"
-						  x2="467rem" y2="170rem" stroke="lightgray" stroke-width="2rem"></line>
+						  x2="467rem" y2="170rem" stroke-width="2rem"></line>
 <!--					<line x1="327rem" y1="170rem"-->
-<!--						  x2="447rem" y2="170rem" stroke="lightgray" stroke-width="2rem"></line>-->
+<!--						  x2="447rem" y2="170rem" stroke-width="2rem"></line>-->
 
 					<line x1="487rem" y1="10rem"
-						  x2="619rem" y2="10rem" stroke="lightgray" stroke-width="2rem"></line>
+						  x2="619rem" y2="10rem" stroke-width="2rem"></line>
 					<line x1="775rem" y1="10rem"
-						  x2="100%" y2="10rem" stroke="lightgray" stroke-width="2rem"></line>
+						  x2="100%" y2="10rem" stroke-width="2rem"></line>
 
 					<line x1="468rem" y1="30rem"
-						  x2="468rem" y2="171rem" stroke="lightgray" stroke-width="2rem"></line>
+						  x2="468rem" y2="171rem" stroke-width="2rem"></line>
 <!--					<line x1="468rem" y1="30rem"-->
-<!--						  x2="468rem" y2="151rem" stroke="lightgray" stroke-width="2rem"></line>-->
+<!--						  x2="468rem" y2="151rem" stroke-width="2rem"></line>-->
 
 					<line x1="468rem" y1="30rem"
-						  x2="487rem" y2="10rem" stroke="lightgray" stroke-width="2rem"></line>
+						  x2="487rem" y2="10rem" stroke-width="2rem"></line>
 <!--					<line x1="447rem" y1="170rem"-->
-<!--						  x2="468rem" y2="151rem" stroke="lightgray" stroke-width="2rem"></line>-->
+<!--						  x2="468rem" y2="151rem" stroke-width="2rem"></line>-->
 				</svg>
 			</div>
 		</div>
