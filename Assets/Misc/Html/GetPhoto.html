@@ -429,7 +429,7 @@
 				let now = new Date(Date.now());
 				document.getElementById(
 					"Date"
-				).textContent = `${now.getDay()}/${now.getMonth()}/${now.getFullYear()}`;
+				).textContent = `${now.getDate()}/${now.getMonth() + 1}/${now.getFullYear()}`;
 				document.getElementById("Time").textContent = `${
 					now.getHours() > 12 ? now.getHours() - 12 : now.getHours()
 				}:${("0" + now.getMinutes().toString()).slice(-2)}:${(
