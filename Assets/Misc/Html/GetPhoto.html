@@ -92,6 +92,12 @@
 				justify-content: center;
 				text-align: center;
 				display: flex;
+
+				& p {
+					color: white;
+					position: relative;
+					font-size: 64rem;
+				}
 			}
 
 			#RksBackground {
@@ -340,13 +346,6 @@
 						<p id="CMText" class="Text TextSize52">0</p>
 					</div>
 					<div id="NameLimiter">
-						<p
-							id="Name"
-							class="Text TextSize64"
-							style="color: white; position: relative"
-						>
-							undefined
-						</p>
 					</div>
 				</div>
 				<div id="DateTime">
@@ -422,7 +421,7 @@
 				}
 
 				document.getElementById("Rks").textContent = GetRksFormatted();
-				document.getElementById("Name").textContent = GetUserNickName();
+				document.getElementById("NameLimiter").appendChild(ConvertUnityRichText(GetUserNickName(), 64));
 				//document.getElementById("Main").style =
 				//	"aspect-ratio: 934 / 2048;";
 

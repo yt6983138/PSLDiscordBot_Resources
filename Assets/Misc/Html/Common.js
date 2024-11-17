@@ -98,6 +98,89 @@ function StringIsNullOrEmpty(str) {
     return true;
 }
 
+/**
+ * https://github.com/Catrong/phi-plugin/blob/main/model/fCompute.js
+ * @param richText {string}
+ * @param onlyText {boolean} return text only or html elements
+ * @param baseFontSize {number | null} rem, or null to complete ignore it
+ * @returns {HTMLParagraphElement | string}
+ */
+function ConvertUnityRichText(richText, baseFontSize = 16, onlyText = false) {
+    richText = richText.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const reg = [
+        /&lt;color\s*=\s*.*?&gt;(.*?)&lt;\/color&gt;/, // color
+        /&lt;size\s*=\s*.*?&gt;(.*?)&lt;\/size&gt;/, // size
+        /&lt;i&gt;(.*?)&lt;\/i&gt;/, // italic
+        /&lt;b&gt;(.*?)&lt;\/b&gt;/ // bold
+    ]
+
+    let hasMatchAny = false;
+    while (1) {
+        if (richText.match(reg[0])) {
+            hasMatchAny = true;
+            const txt = richText.match(reg[0])[1];
+            const color = richText.match(reg[0])[0].match(/&lt;color\s*=\s*(.*?)&gt;/)[1].replace(/[\s\"]/g, '');
+            richText = richText.replace(reg[0], onlyText
+                ? txt
+                : `<span style="color:${color};${baseFontSize !== null ? `font-size: ${baseFontSize}rem` : ""}" class="UnityConvertedColor">${txt}</span>`);
+            continue;
+        }
+
+        if (richText.match(reg[2])) {
+            hasMatchAny = true;
+            let txt = richText.match(reg[2])[1];
+            richText = richText.replace(reg[2], onlyText ? txt : `<i>${txt}</i>`);
+            continue;
+        }
+
+        if (richText.match(reg[3])) {
+            hasMatchAny = true;
+            let txt = richText.match(reg[3])[1]
+            richText = richText.replace(reg[3], onlyText ? txt : `<b>${txt}</b>`);
+            continue;
+        }
+        if (richText.match(reg[1])) {
+            hasMatchAny = true;
+            const txt = richText.match(reg[1])[1];
+            const size = richText.match(reg[1])[0].match(/&lt;size\s*=\s*(.*?)&gt;/)[1];
+            let realSize = 0;
+            console.debug(size);
+            if (size.includes('+') || size.includes('-')) {
+                    realSize = baseFontSize + Number(size);
+            }
+            else if (size.includes('%')) {
+                    realSize = Number(size.replaceAll('%', "")) * 0.01 * baseFontSize;
+            }
+            else if (size.includes('px')) {
+                realSize = Number(size.replaceAll('px', ""));
+            }
+            else {
+                console.warn(`Invalid size ${size}`);
+            }
+            richText = richText.replace(reg[1], onlyText
+                ? txt
+                : `<span ${baseFontSize !== null ? `style="font-size:${realSize}rem"` : ""} class="UnityConvertedSize">${txt}</span>`);
+            continue;
+        }
+        if (richText.match(/\n\r?/)) {
+            richText.replace(/\n\r?/g, '<br>');
+        }
+        break;
+    }
+    if (onlyText) {
+        richText = richText.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+    }
+    else {
+        const element = document.createElement("p");
+        if (baseFontSize !== null)
+            element.style.fontSize = `${baseFontSize}rem`;
+        element.classList.add("UnityConvertedRoot");
+        element.innerHTML = richText;
+        return element;
+    }
+    return richText;
+}
+
 function RankIdToName(id) {
     if (id < 0) return "Bugged";
     return _RankIdToName[id];

@@ -62,7 +62,7 @@ function MakeExampleValue() {
 			}
 		},
 		"UserInfo": {
-			"NickName": "EXAMPLE MODE",
+			"NickName": "<color=#112233>EXAMPLE MODE</color>",
 			"UserName": "mtaumdrxpvijgxyu6gl59dicm",
 			"CreationTime": "2023-04-29T13:12:28.568Z",
 			"ModificationTime": "2024-09-27T22:47:16.351Z"
