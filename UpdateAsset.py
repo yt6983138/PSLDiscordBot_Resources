@@ -4,6 +4,8 @@ illustrationSrc = "https://github.com/7aGiven/Phigros_Resource/archive/refs/head
 illustrationLowResSrc = "https://github.com/7aGiven/Phigros_Resource/archive/refs/heads/illustrationLowRes.zip"
 illustrationBlurSrc = "https://github.com/7aGiven/Phigros_Resource/archive/refs/heads/illustrationBlur.zip"
 
+avatarSrc = "https://github.com/7aGiven/Phigros_Resource/archive/refs/heads/avatar.zip"
+
 def Main(config):
     illustrationFetched = None
 
@@ -14,6 +16,8 @@ def Main(config):
     illustrationLowResFetched = zipfile.ZipFile(io.BytesIO(requests.get(illustrationLowResSrc).content))
     print("Fetching illustrationBlur")
     illustrationBlurFetched = zipfile.ZipFile(io.BytesIO(requests.get(illustrationBlurSrc).content))
+    print("Fetching avatar")
+    avatarFetched = zipfile.ZipFile(io.BytesIO(requests.get(avatarSrc).content))
 
     for fileName in illustrationLowResFetched.namelist():
         index = fileName.rfind("/") + 1
@@ -32,6 +36,9 @@ def Main(config):
         if (illustrationFetched != None):
             with illustrationLowResFetched.open("Phigros_Resource-illustration/" + fileName) as file:
                 with open(dir + "Illustration.png", "bw") as toWrite: toWrite.write(file.read())
+
+    # avatars
+    
 
 if (__name__ == "__main__"): Main({"FetchIllustration": False})
 

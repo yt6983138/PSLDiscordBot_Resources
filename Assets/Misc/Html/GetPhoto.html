@@ -1,551 +1,608 @@
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<script src="./Common.js"></script>
-		<link rel="stylesheet" type="text/css" href="./Common.css" />
+<head>
+    <meta charset="utf-8"/>
+    <script src="./Common.js"></script>
+    <link rel="stylesheet" type="text/css" href="./Common.css"/>
 
-		<style>
-			:root {
-				font-size: calc(100vw / 934);
-				overflow-x: hidden;
-				overflow-y: hidden;
-			}
-			body {
-				padding: 0%;
-				margin: 0%;
-				background-image: var(--MissingTexture);
-				background-repeat: no-repeat;
-				background-position: center;
-				background-size: cover;
-			}
-			p {
-				margin: 0%;
-			}
+    <style>
+        :root {
+            font-size: calc(100vw / 934);
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
 
-			.TextSize22 {
-				font-size: 22rem;
-			}
-			.TextSize32 {
-				font-size: 32rem;
-			}
-			.TextSize36 {
-				font-size: 36rem;
-			}
-			.TextSize52 {
-				font-size: 52rem;
-			}
-			.TextSize64 {
-				font-size: 64rem;
-			}
+        body {
+            padding: 0%;
+            margin: 0%;
+            background-image: var(--MissingTexture);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
 
-			#Main {
-				/* border: 2px solid red; */
-				min-height: 100vh;
-				width: 100%;
-				/* backdrop-filter: blur(10rem); */
-			}
+        p {
+            margin: 0%;
+        }
 
-			#Avatar {
-				position: absolute;
-				top: 0%;
-				left: 158rem;
+        .TextSize22 {
+            font-size: 22rem;
+        }
 
-				width: 224rem;
-				height: 224rem;
+        .TextSize32 {
+            font-size: 32rem;
+        }
 
-				background-image: var(--MissingTexture);
+        .TextSize36 {
+            font-size: 36rem;
+        }
 
-				clip-path: polygon(
-					40rem 37rem,
-					0% 187rem,
-					184rem 187rem,
-					100% 37rem
-				);
-			}
+        .TextSize52 {
+            font-size: 52rem;
+        }
 
-			#CMBackground {
-				width: 130rem;
-				height: 64rem;
+        .TextSize64 {
+            font-size: 64rem;
+        }
 
-				top: 10rem;
-				left: 42rem;
-				position: absolute;
-				background-size: cover;
-				background-image: var(--MissingTexture);
+        #Main {
+            /* border: 2px solid red; */
+            min-height: 100vh;
+            width: 100%;
+            /* backdrop-filter: blur(10rem); */
+        }
 
-				text-align: center;
-			}
-			#CMText {
-				color: white;
-				position: relative;
-				top: -20rem;
-			}
+        #Avatar {
+            position: absolute;
+            top: 0%;
+            left: 158rem;
 
-			#NameLimiter {
-				position: absolute;
-				left: 362rem;
+            width: 224rem;
+            height: 224rem;
 
-				width: 572rem;
-				height: 100%;
+            background-image: var(--MissingTexture);
 
-				align-items: center;
-				justify-content: center;
-				text-align: center;
-				display: flex;
+            clip-path: polygon(
+                    40rem 37rem,
+                    0% 187rem,
+                    184rem 187rem,
+                    100% 37rem
+            );
+        }
 
-				& p {
-					color: white;
-					position: relative;
-					font-size: 64rem;
-				}
-			}
+        #CMBackground {
+            width: 130rem;
+            height: 64rem;
 
-			#RksBackground {
-				width: 165rem;
-				height: 50rem;
-				position: absolute;
+            top: 10rem;
+            left: 42rem;
+            position: absolute;
+            background-size: cover;
+            background-image: var(--MissingTexture);
 
-				top: 68rem;
-				left: 15rem;
-				background-color: white;
+            text-align: center;
+        }
 
-				align-items: center;
-				align-content: center;
-				justify-content: center;
-				justify-items: center;
-				text-align: center;
+        #CMText {
+            color: white;
+            position: relative;
+            top: -20rem;
+        }
 
-				clip-path: polygon(13rem 0%, 100% 0%, 100% 100%, 0% 100%);
-			}
+        #NameLimiter {
+            position: absolute;
+            left: 362rem;
 
-			#DateTime {
-				position: absolute;
+            width: 572rem;
+            height: 100%;
 
-				top: 256rem;
-				height: 130rem;
-				width: 381rem;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            display: flex;
 
-				clip-path: polygon(0% 0%, 100% 0%, 348rem 100%, 0% 100%);
+            & p {
+                color: white;
+                position: relative;
+                font-size: 64rem;
+            }
+        }
 
-				background-color: rgba(0, 0, 0, 0.6);
+        #RksBackground {
+            width: 165rem;
+            height: 50rem;
+            position: absolute;
 
-				& #Date {
-					position: absolute;
-					color: white;
-					top: 6rem;
-					left: 36rem;
-				}
-				& #Time {
-					position: absolute;
-					color: white;
-					top: 46rem;
-					left: 36rem;
-				}
-				& #QueryTime {
-					position: absolute;
-					color: white;
-					top: 90rem;
-					left: 36rem;
-				}
-				& #DateTimeLine {
-					clip-path: polygon(
-						344rem 100%,
-						377rem 0%,
-						100% 0%,
-						100% 100%
-					);
-					background-color: white;
-					width: 100%;
-					height: 100%;
-				}
-			}
+            top: 68rem;
+            left: 15rem;
+            background-color: white;
 
-			#TopBackground {
-				background-color: rgba(0, 0, 0, 0.6);
-				top: 48rem;
-				position: absolute;
-				height: 128rem;
-				width: 100%;
-			}
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            justify-items: center;
+            text-align: center;
 
-			#TopThings {
-				aspect-ratio: 934 / 256;
-				position: relative;
-				display: block;
-				width: 100%;
-				margin: 0%;
-			}
+            clip-path: polygon(13rem 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
 
-			#ScoresDiv {
-				position: relative;
-				top: 32rem;
-				width: 100%;
-				padding-left: 38rem;
-			}
-			#Scores {
-				width: fit-content;
-				height: fit-content;
-				border-spacing: 0px;
-				& tr {
-					width: 100%;
-					height: 160rem;
-				}
-			}
+        #DateTime {
+            position: absolute;
 
-			.ScoreCell {
-				position: relative;
-				width: 448rem;
-				height: 136rem;
-				& .Illustration {
-					background-image: var(--MissingTexture);
-					position: absolute;
-					left: 90rem;
-					top: 0%;
-					width: 254rem;
-					height: 136rem;
-				}
-				& .LeftInfos {
-					position: absolute;
-					top: 6rem;
-					height: 124rem;
-					width: 140rem;
-					background-color: rgba(0, 0, 0, 0.6);
-					border-left: 3rem solid white;
+            top: 256rem;
+            height: 130rem;
+            width: 381rem;
 
-					& hr {
-						position: relative;
-						height: 2rem;
-						border: none;
-						border-bottom: 2rem solid rgba(255, 255, 255, 0.4);
-						margin-top: 28rem;
-					}
-					& p {
-						position: absolute;
-						font-size: 20rem;
-						z-index: 100;
-						color: white;
-						left: 4rem;
-					}
-					& .Stretched {
-						font-stretch: condensed;
-						font-family: "Saira ExtraCondensed";
-					}
-				}
-				& .ScoreNumber {
-					height: 34rem;
-					width: max-content;
-					position: absolute;
-					top: 6rem;
-					left: 300rem;
-					clip-path: polygon(8rem 0%, 100% 0%, 100% 100%, 0% 100%);
-					border-right: 3rem solid white;
-					background-color: rgba(0, 0, 0, 0.85);
+            clip-path: polygon(0% 0%, 100% 0%, 348rem 100%, 0% 100%);
 
-					& .Line {
-						clip-path: polygon(
-							8rem 0%,
-							11rem 0%,
-							3rem 100%,
-							0% 100%
-						);
-						background-color: white;
-						position: absolute;
-						width: 100%;
-						height: 100%;
-					}
-					& p {
-						width: max-content;
-						position: relative;
-						color: white;
-						font-size: 20rem;
-						left: 15rem;
-						top: 2rem;
-						margin-right: 24rem;
-					}
-				}
-				& .Rank {
-					position: absolute;
-					top: 70rem;
-					left: 278rem;
-					height: 60rem;
-					width: 128rem;
-					background-color: rgba(0, 0, 0, 0.6);
-					border-right: 3rem solid white;
+            background-color: rgba(0, 0, 0, 0.6);
 
-					& img {
-						position: absolute;
-						width: 64rem;
-						height: 64rem;
-						top: -2rem;
-						right: 8rem;
-					}
-				}
-			}
-			#BottomThings {
-				position: relative;
-				margin-top: 36rem;
-				width: 100%;
-				min-height: 1rem;
-				height: fit-content;
+            & #Date {
+                position: absolute;
+                color: white;
+                top: 6rem;
+                left: 36rem;
+            }
 
-				& #AdvertisementThingy {
-					position: relative;
-					left: 486rem;
-					width: fit-content;
-					height: 160rem;
-					& p {
-						position: relative;
-						font-size: 16rem;
-						color: white;
-					}
-				}
-			}
+            & #Time {
+                position: absolute;
+                color: white;
+                top: 46rem;
+                left: 36rem;
+            }
 
-			#Overflow {
-				position: absolute;
-				top: 1864rem;
-				width: 100%;
-				height: 200rem;
+            & #QueryTime {
+                position: absolute;
+                color: white;
+                top: 90rem;
+                left: 36rem;
+            }
 
-				& .OverflowText {
-					height: 20rem;
-					line-height: 22rem;
-					position: absolute;
-					color: white;
-					font-size: 20rem;
-					padding-left: 6rem;
-					padding-right: 6rem;
-					border-left: 2rem solid white;
-					border-right: 2rem solid white;
-					mix-blend-mode: difference;
-				}
-				& #OverflowText1 {
-					left: 170rem;
-					top: 160rem;
-				}
-				& #OverflowText2 {
-					left: 618rem;
-				}
-				& #OverflowLines {
-					width: 100%;
-					height: 100%;
-					mix-blend-mode: difference;
-					stroke: white;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<div id="Main">
-			<div id="TopThings">
-				<div id="TopBackground">
-					<div id="RksBackground">
-						<p id="Rks" class="Text TextSize36">0</p>
-					</div>
-					<div id="CMBackground">
-						<p id="CMText" class="Text TextSize52">0</p>
-					</div>
-					<div id="NameLimiter">
-					</div>
-				</div>
-				<div id="DateTime">
-					<div id="DateTimeLine"></div>
-					<p id="QueryTime" class="Text TextSize22">Query Time</p>
-					<p id="Date" class="Text TextSize32">date</p>
-					<p id="Time" class="Text TextSize32">Time</p>
-				</div>
-				<img id="Avatar" />
-			</div>
+            & #DateTimeLine {
+                clip-path: polygon(
+                        344rem 100%,
+                        377rem 0%,
+                        100% 0%,
+                        100% 100%
+                );
+                background-color: white;
+                width: 100%;
+                height: 100%;
+            }
+        }
 
-			<div id="ScoresDiv">
-				<table id="Scores"></table>
-			</div>
+        #TopBackground {
+            background-color: rgba(0, 0, 0, 0.6);
+            top: 48rem;
+            position: absolute;
+            height: 128rem;
+            width: 100%;
+        }
 
-			<div id="BottomThings">
-				<div id="AdvertisementThingy">
-					<p style="top: 0rem">PHIGROS SCORE LOOKUP BOT</p>
-					<p style="top: 30rem">
-						GITHUB: github.com/yt6983138/PSLDiscordBot
-					</p>
-					<p style="top: 45rem">DISCORD: discord.gg/JvGAusvNKt</p>
-				</div>
-			</div>
+        #TopThings {
+            aspect-ratio: 934 / 256;
+            position: relative;
+            display: block;
+            width: 100%;
+            margin: 0%;
+        }
 
-			<div id="Overflow" style="display: none">
-				<p id="OverflowText1" class="OverflowText"> O V E R F L O W </p>
-				<p id="OverflowText2" class="OverflowText"> O V E R F L O W </p>
-				<svg id="OverflowLines">
-					<line x1="0" y1="170rem"
-						x2="171rem" y2="170rem" stroke-width="2rem"></line>
-					<line x1="327rem" y1="170rem"
-						  x2="467rem" y2="170rem" stroke-width="2rem"></line>
-<!--					<line x1="327rem" y1="170rem"-->
-<!--						  x2="447rem" y2="170rem" stroke-width="2rem"></line>-->
+        #ScoresDiv {
+            position: relative;
+            top: 32rem;
+            width: 100%;
+            padding-left: 38rem;
+        }
 
-					<line x1="487rem" y1="10rem"
-						  x2="619rem" y2="10rem" stroke-width="2rem"></line>
-					<line x1="775rem" y1="10rem"
-						  x2="100%" y2="10rem" stroke-width="2rem"></line>
+        #Scores {
+            width: fit-content;
+            height: fit-content;
+            border-spacing: 0px;
 
-					<line x1="468rem" y1="30rem"
-						  x2="468rem" y2="171rem" stroke-width="2rem"></line>
-<!--					<line x1="468rem" y1="30rem"-->
-<!--						  x2="468rem" y2="151rem" stroke-width="2rem"></line>-->
+            & tr {
+                width: 100%;
+                height: 160rem;
+            }
+        }
 
-					<line x1="468rem" y1="30rem"
-						  x2="487rem" y2="10rem" stroke-width="2rem"></line>
-<!--					<line x1="447rem" y1="170rem"-->
-<!--						  x2="468rem" y2="151rem" stroke-width="2rem"></line>-->
-				</svg>
-			</div>
-		</div>
+        .ScoreCell {
+            position: relative;
+            width: 448rem;
+            height: 136rem;
 
-		<script>
-			async function Initialize() {
-				await InitializePSLRender();
+            & .Illustration {
+                background-image: var(--MissingTexture);
+                position: absolute;
+                left: 90rem;
+                top: 0%;
+                width: 254rem;
+                height: 136rem;
+            }
 
-				document.body.style.backgroundImage =
-					"url('" + GetUserBackgroundBlur() +	"')";
+            & .LeftInfos {
+                position: absolute;
+                top: 6rem;
+                height: 124rem;
+                width: 140rem;
+                background-color: rgba(0, 0, 0, 0.6);
+                border-left: 3rem solid white;
 
-				document.getElementById("Avatar").src = GetAvatarFilePath();
+                & hr {
+                    position: relative;
+                    height: 2rem;
+                    border: none;
+                    border-bottom: 2rem solid rgba(255, 255, 255, 0.4);
+                    margin-top: 28rem;
+                }
 
-				const cmBackground = document.getElementById("CMBackground");
-				const cmText = document.getElementById("CMText");
-				if (GetCMLevel() !== 0) {
-					cmBackground.style.backgroundImage =
-							"url('" + GetCMBackgroundFilePath() + "')";
-					cmText.textContent = GetCMLevel();
-				} else {
-					cmBackground.style.display = "none";
-					cmText.style.display = "none";
-				}
+                & p {
+                    position: absolute;
+                    font-size: 20rem;
+                    z-index: 100;
+                    color: white;
+                    left: 4rem;
+                }
 
-				document.getElementById("Rks").textContent = GetRksFormatted();
-				document.getElementById("NameLimiter").appendChild(ConvertUnityRichText(GetUserNickName(), 64));
-				//document.getElementById("Main").style =
-				//	"aspect-ratio: 934 / 2048;";
+                & .Stretched {
+                    font-stretch: condensed;
+                    font-family: "Saira ExtraCondensed";
+                }
+            }
 
-				let now = new Date(Date.now());
-				document.getElementById(
-					"Date"
-				).textContent = `${now.getMonth() + 1}/${now.getDate()}/${now.getFullYear()}`;
-				document.getElementById("Time").textContent = `${
-					now.getHours() > 12 ? now.getHours() - 12 : now.getHours()
-				}:${("0" + now.getMinutes().toString()).slice(-2)}:${(
-					"0" + now.getSeconds().toString()
-				).slice(-2)} ${now.getHours() > 12 ? "PM" : "AM"}`;
+            & .ScoreNumber {
+                height: 34rem;
+                width: max-content;
+                position: absolute;
+                top: 6rem;
+                left: 300rem;
+                clip-path: polygon(8rem 0%, 100% 0%, 100% 100%, 0% 100%);
+                border-right: 3rem solid white;
+                background-color: rgba(0, 0, 0, 0.85);
 
-				let table = document.getElementById("Scores");
-				let c = 24;
-				if (!ExampleMode) c = window.INFO.ExtraArguments.ShowCount;
-				let count = Math.min(GetRecordCount(), c);
-				let tr = undefined;
-				for (let i = 0; i < count; i++) {
-					if (i % 2 === 1) {
-						tr = document.createElement("tr");
-						table.appendChild(tr);
-					}
-					if (i === 0) {
-						tr = document.createElement("tr");
-						table.appendChild(tr);
-						tr.appendChild(CreateScoreTd());
-					}
+                & .Line {
+                    clip-path: polygon(
+                            8rem 0%,
+                            11rem 0%,
+                            3rem 100%,
+                            0% 100%
+                    );
+                    background-color: white;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                }
 
-					let td = CreateScoreTd();
-					tr.appendChild(td);
+                & p {
+                    width: max-content;
+                    position: relative;
+                    color: white;
+                    font-size: 20rem;
+                    left: 15rem;
+                    top: 2rem;
+                    margin-right: 24rem;
+                }
+            }
 
-					const record = GetRecord(i);
+            & .Rank {
+                position: absolute;
+                top: 70rem;
+                left: 278rem;
+                height: 60rem;
+                width: 128rem;
+                background-color: rgba(0, 0, 0, 0.6);
+                border-right: 3rem solid white;
 
-					const leftInfos = document.createElement("div");
-					td.appendChild(leftInfos);
-					leftInfos.classList.add("LeftInfos");
-					leftInfos.appendChild(document.createElement("hr"));
-					leftInfos.appendChild(document.createElement("hr"));
-					leftInfos.appendChild(document.createElement("hr"));
-					leftInfos.appendChild(
-						CreateTextForLeftInfos(record.Score, "0rem")
-					);
-					leftInfos.appendChild(
-						CreateTextForLeftInfos(
-							FloatToUserPrecisionString(record.Accuracy) + "%",
-							"31rem"
-						)
-					);
-					leftInfos.appendChild(
-						CreateTextForLeftInfos(
-							FloatToUserPrecisionString(record.Rks),
-							"62rem"
-						)
-					);
-					leftInfos.appendChild(
-						CreateTextForLeftInfos(
-							`${record.ChartConstant} ${
-								RecordDifficultyToName[record.Difficulty]
-							}`,
-							"92rem"
-						)
-					);
+                & img {
+                    position: absolute;
+                    width: 64rem;
+                    height: 64rem;
+                    top: -2rem;
+                    right: 8rem;
+                }
+            }
+        }
 
-					const rank = document.createElement("div");
-					td.appendChild(rank);
-					rank.classList.add("Rank");
-					const rankImg = document.createElement("img");
-					rank.appendChild(rankImg);
-					rankImg.src = GetRecordRankImagePath(record);
-					rankImg.onerror =
-						"this.style = 'background-image: var(--MissingTexture);'";
+        #BottomThings {
+            position: relative;
+            margin-top: 36rem;
+            width: 100%;
+            min-height: 1rem;
+            height: fit-content;
 
-					const illustration = document.createElement("img");
-					td.appendChild(illustration);
-					illustration.src = GetRecordLowResIllustrationPath(record);
-					illustration.classList.add(
-						"IllustrationParallelogramMasked"
-					);
-					illustration.classList.add("Illustration");
+            & #AdvertisementThingy {
+                position: relative;
+                left: 486rem;
+                width: fit-content;
+                height: 160rem;
 
-					const numberBackground = document.createElement("div");
-					td.appendChild(numberBackground);
-					numberBackground.classList.add("ScoreNumber");
-					const numberLine = document.createElement("div");
-					numberLine.classList.add("Line");
-					numberBackground.appendChild(numberLine);
-					const number = document.createElement("p");
-					numberBackground.appendChild(number);
-					number.textContent = `#${i == 0 ? "φ" : i}`;
-				}
+                & p {
+                    position: relative;
+                    font-size: 16rem;
+                    color: white;
+                }
+            }
+        }
 
-				if (count > 20) {
-					document.getElementById("Overflow").style.display = "unset";
-				}
+        #Overflow {
+            position: absolute;
+            top: 1864rem;
+            width: 100%;
+            height: 200rem;
 
-				const ad = document.getElementById("AdvertisementThingy");
+            & .OverflowText {
+                height: 20rem;
+                line-height: 22rem;
+                position: absolute;
+                color: white;
+                font-size: 20rem;
+                padding-left: 6rem;
+                padding-right: 6rem;
+                border-left: 2rem solid white;
+                border-right: 2rem solid white;
+                mix-blend-mode: difference;
+            }
 
-				if (count % 2 === 0) {
-					ad.style.top = "-160rem";
-				}
-				const vp = GetViewportSize();
-				const dat = GetElementXAndY(ad);
-				SetDynamicWidth(vp.width);
-				SetDynamicHeight(dat.y + dat.height);
+            & #OverflowText1 {
+                left: 170rem;
+                top: 160rem;
+            }
 
-				SetReady(true);
+            & #OverflowText2 {
+                left: 618rem;
+            }
+
+            & #OverflowLines {
+                width: 100%;
+                height: 100%;
+                mix-blend-mode: difference;
+                stroke: white;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="Main">
+    <div id="TopThings">
+        <div id="TopBackground">
+            <div id="RksBackground">
+                <p id="Rks" class="Text TextSize36">0</p>
+            </div>
+            <div id="CMBackground">
+                <p id="CMText" class="Text TextSize52">0</p>
+            </div>
+            <div id="NameLimiter">
+            </div>
+        </div>
+        <div id="DateTime">
+            <div id="DateTimeLine"></div>
+            <p id="QueryTime" class="Text TextSize22">Query Time</p>
+            <p id="Date" class="Text TextSize32">date</p>
+            <p id="Time" class="Text TextSize32">Time</p>
+        </div>
+        <img id="Avatar"/>
+    </div>
+
+    <div id="ScoresDiv">
+        <table id="Scores"></table>
+    </div>
+
+    <div id="BottomThings">
+        <div id="AdvertisementThingy">
+            <p style="top: 0rem">PHIGROS SCORE LOOKUP BOT</p>
+            <p style="top: 30rem">
+                GITHUB: github.com/yt6983138/PSLDiscordBot
+            </p>
+            <p style="top: 45rem">DISCORD: discord.gg/JvGAusvNKt</p>
+        </div>
+    </div>
+
+    <div id="Overflow" style="display: none">
+        <p id="OverflowText1" class="OverflowText"> O V E R F L O W </p>
+        <p id="OverflowText2" class="OverflowText"> O V E R F L O W </p>
+        <svg id="OverflowLines">
+            <line x1="0" y1="170rem"
+                  x2="171rem" y2="170rem" stroke-width="2rem"></line>
+            <line x1="327rem" y1="170rem"
+                  x2="467rem" y2="170rem" stroke-width="2rem"></line>
+            <!--					<line x1="327rem" y1="170rem"-->
+            <!--						  x2="447rem" y2="170rem" stroke-width="2rem"></line>-->
+
+            <line x1="487rem" y1="10rem"
+                  x2="619rem" y2="10rem" stroke-width="2rem"></line>
+            <line x1="775rem" y1="10rem"
+                  x2="100%" y2="10rem" stroke-width="2rem"></line>
+
+            <line x1="468rem" y1="30rem"
+                  x2="468rem" y2="171rem" stroke-width="2rem"></line>
+            <!--					<line x1="468rem" y1="30rem"-->
+            <!--						  x2="468rem" y2="151rem" stroke-width="2rem"></line>-->
+
+            <line x1="468rem" y1="30rem"
+                  x2="487rem" y2="10rem" stroke-width="2rem"></line>
+            <!--					<line x1="447rem" y1="170rem"-->
+            <!--						  x2="468rem" y2="151rem" stroke-width="2rem"></line>-->
+        </svg>
+    </div>
+</div>
+
+<script>
+    async function Initialize() {
+        await InitializePSLRender();
+
+        document.body.style.backgroundImage =
+            "url('" + GetUserBackgroundBlur() + "')";
+
+        document.getElementById("Avatar").src = GetAvatarFilePath();
+
+        const cmBackground = document.getElementById("CMBackground");
+        const cmText = document.getElementById("CMText");
+        if (GetCMLevel() !== 0) {
+            cmBackground.style.backgroundImage =
+                "url('" + GetCMBackgroundFilePath() + "')";
+            cmText.textContent = GetCMLevel();
+        } else {
+            cmBackground.style.display = "none";
+            cmText.style.display = "none";
+        }
+
+        document.getElementById("Rks").textContent = GetRksFormatted();
+        document.getElementById("NameLimiter").appendChild(ConvertUnityRichText(GetUserNickName(), 64));
+        //document.getElementById("Main").style =
+        //	"aspect-ratio: 934 / 2048;";
+
+        let now = new Date(Date.now());
+        document.getElementById(
+            "Date"
+        ).textContent = `${now.getMonth() + 1}/${now.getDate()}/${now.getFullYear()}`;
+        document.getElementById("Time").textContent = `${
+            now.getHours() > 12 ? now.getHours() - 12 : now.getHours()
+        }:${("0" + now.getMinutes().toString()).slice(-2)}:${(
+            "0" + now.getSeconds().toString()
+        ).slice(-2)} ${now.getHours() > 12 ? "PM" : "AM"}`;
+
+        if (ExampleMode) {
+            window.INFO.ExtraArguments = {
+                "ShowCount": 24,
+                "LowerBound": 0,
+                "AllowedGrades": [
+                    Status.Bugged,
+                    Status.NotFc,
+                    Status.Fc,
+                    Status.Phi,
+                    Status.Vu,
+                    Status.S,
+                    Status.A,
+                    Status.B,
+                    Status.C,
+                    Status.False
+                ]
+            };
+        }
+
+
+        let lowerBound = window.INFO.ExtraArguments.LowerBound;
+        let maxCount = GetRecordCount();
+		let maxShowingCount = window.INFO.ExtraArguments.ShowCount;
+		let allowed = window.INFO.ExtraArguments.AllowedGrades;
+
+        let table = document.getElementById("Scores");
+        let tr = document.createElement("tr");
+        table.appendChild(tr);
+        tr.appendChild(CreateScoreTd());
+
+        let realElapsed = 0;
+		let i = lowerBound;
+        while (true) {
+			if (i >= maxCount || realElapsed >= maxShowingCount) break;
+
+			const record = GetRecord(i);
+
+			if (!allowed.includes(record.Status)) {
+				i++;
+				continue;
 			}
 
-			function CreateScoreTd() {
-				let td = document.createElement("td");
-				td.classList.add("ScoreCell");
+            if (realElapsed % 2 === 1) {
+                tr = document.createElement("tr");
+                table.appendChild(tr);
+            }
 
-				return td;
-			}
-			function CreateTextForLeftInfos(text, height) {
-				var e = document.createElement("p");
-				e.textContent = text;
-				e.style = `top: ${height}`;
-				if (GetUserPrecisionInt() > 3) e.classList.add("Stretched");
-				return e;
-			}
+            let td = CreateScoreTd();
+            tr.appendChild(td);
 
-			Initialize();
-		</script>
-	</body>
+            const leftInfos = document.createElement("div");
+            td.appendChild(leftInfos);
+            leftInfos.classList.add("LeftInfos");
+            leftInfos.appendChild(document.createElement("hr"));
+            leftInfos.appendChild(document.createElement("hr"));
+            leftInfos.appendChild(document.createElement("hr"));
+            leftInfos.appendChild(
+                CreateTextForLeftInfos(record.Score, "0rem")
+            );
+            leftInfos.appendChild(
+                CreateTextForLeftInfos(
+                    FloatToUserPrecisionString(record.Accuracy) + "%",
+                    "31rem"
+                )
+            );
+            leftInfos.appendChild(
+                CreateTextForLeftInfos(
+                    FloatToUserPrecisionString(record.Rks),
+                    "62rem"
+                )
+            );
+            leftInfos.appendChild(
+                CreateTextForLeftInfos(
+                    `${record.ChartConstant} ${
+                        RecordDifficultyToName[record.Difficulty]
+                    }`,
+                    "92rem"
+                )
+            );
+
+            const rank = document.createElement("div");
+            td.appendChild(rank);
+            rank.classList.add("Rank");
+            const rankImg = document.createElement("img");
+            rank.appendChild(rankImg);
+            rankImg.src = GetRecordRankImagePath(record);
+            rankImg.onerror =
+                "this.style = 'background-image: var(--MissingTexture);'";
+
+            const illustration = document.createElement("img");
+            td.appendChild(illustration);
+            illustration.src = GetRecordLowResIllustrationPath(record);
+            illustration.classList.add(
+                "IllustrationParallelogramMasked"
+            );
+            illustration.classList.add("Illustration");
+
+            const numberBackground = document.createElement("div");
+            td.appendChild(numberBackground);
+            numberBackground.classList.add("ScoreNumber");
+            const numberLine = document.createElement("div");
+            numberLine.classList.add("Line");
+            numberBackground.appendChild(numberLine);
+            const number = document.createElement("p");
+            numberBackground.appendChild(number);
+            number.textContent = `#${i === 0 ? "φ" : i}`;
+
+            realElapsed++;
+			i++;
+        }
+
+        if (realElapsed > 20 && allowed.length >= 10 && lowerBound === 0) {
+            document.getElementById("Overflow").style.display = "unset";
+        }
+
+        const ad = document.getElementById("AdvertisementThingy");
+
+        if (realElapsed % 2 === 0) {
+            ad.style.top = "-160rem";
+        }
+        const vp = GetViewportSize();
+        const dat = GetElementXAndY(ad);
+        SetDynamicWidth(vp.width);
+        SetDynamicHeight(dat.y + dat.height);
+
+        SetReady(true);
+    }
+
+    function CreateScoreTd() {
+        let td = document.createElement("td");
+        td.classList.add("ScoreCell");
+
+        return td;
+    }
+
+    function CreateTextForLeftInfos(text, height) {
+        var e = document.createElement("p");
+        e.textContent = text;
+        e.style = `top: ${height}`;
+        if (GetUserPrecisionInt() > 3) e.classList.add("Stretched");
+        return e;
+    }
+
+    Initialize();
+</script>
+</body>
 </html>
