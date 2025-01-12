@@ -474,7 +474,9 @@
                     Status.B,
                     Status.C,
                     Status.False
-                ]
+                ],
+                "CCLowerBound": 0,
+                "CCHigherBound": 17
             };
         }
 
@@ -483,6 +485,8 @@
         let maxCount = GetRecordCount();
 		let maxShowingCount = window.INFO.ExtraArguments.ShowCount;
 		let allowed = window.INFO.ExtraArguments.AllowedGrades;
+		let ccHigherBound = window.INFO.ExtraArguments.CCHigherBound;
+		let ccLowerBound = window.INFO.ExtraArguments.CCLowerBound;
 
         let table = document.getElementById("Scores");
         let tr = document.createElement("tr");
@@ -496,7 +500,9 @@
 
 			const record = GetRecord(i);
 
-			if (!allowed.includes(record.Status)) {
+			if (!allowed.includes(record.Status)
+                || record.ChartConstant >= ccHigherBound
+                || record.ChartConstant <= ccLowerBound) {
 				i++;
 				continue;
 			}
