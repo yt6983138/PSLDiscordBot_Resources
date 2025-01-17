@@ -1,0 +1,1127 @@
+{
+  "FallbackLanguages": [
+    "en-US"
+  ],
+  "LocalizedStrings": {
+    "PSLDiscordBot.Core.Common.AdminCommandBasePermissionDenied": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Permission denied.",
+        "zh-TW": "權限不足。",
+        "zh-CN": "权限不足。"
+      }
+    },
+    "PSLDiscordBot.Core.Common.CommandBaseNotRegistered": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "You haven't logged in/linked token. Please use /login or /link-token first.",
+        "zh-TW": "您尚未登入。請使用/login或/link-token以登入。",
+        "zh-CN": "您尚未登录。请使用/login或/link-token以登录。"
+      }
+    },
+    "PSLDiscordBot.Core.Common.SaveHandlerOnOutOfRange": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Error: Expected index less than {0}, more or equal to 0. You entered {1}.",
+        "zh-TW": "參數錯誤：預期索引小於{0}，大於等於0，您輸入了{1}。",
+        "zh-CN": "参数错误：预期索引小于{0}，大于等于0，您输入了{1}。"
+      }
+    },
+    "PSLDiscordBot.Core.Common.SaveHandlerOnOtherException": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Error: {0}\nYou may try again or report to author (`/report-problem`).",
+        "zh-TW": "錯誤：{0}\n您可以再試一次或者使用`/report-problem`將錯誤回傳給管理員。",
+        "zh-CN": "错误：{0}\n您可以再试一次或者使用`/report-problem`将错误回传给管理员。"
+      }
+    },
+    "PSLDiscordBot.Core.Common.SaveHandlerOnNoSaves": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Error: There is no save on the cloud, did you use wrong account, or have not synced?",
+        "zh-TW": "錯誤：雲端上沒有任何存檔，請確認您是否使用錯誤的賬號及是否已同步。",
+        "zh-CN": "错误：云端上没有任何存档，请确认您是否使用错误的账号及是否已同步。"
+      }
+    },
+    "PSLDiscordBot.Core.Common.SaveHandlerOnPhiLibUriException": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Error: {0}\n*This sometimes can indicate save corruption. Please try few more times or re-sync.*",
+        "zh-TW": "錯誤：\n*請注意，這有時候代表著存檔毀損。請再嘗試一次或重新同步。*",
+        "zh-CN": "错误：\n*请注意，这有时候代表着存档损坏。请再尝试一次或重新同步。*"
+      }
+    },
+    "PSLDiscordBot.Core.Common.SaveHandlerOnPhiLibJsonException": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Error: {0}\n*This sometimes can indicate save corruption. Please try few more times or re-sync.*",
+        "zh-TW": "錯誤：\n*請注意，這有時候代表著存檔毀損。請再嘗試一次或重新同步。*",
+        "zh-CN": "错误：\n*请注意，这有时候代表着存档损坏。请再尝试一次或重新同步。*"
+      }
+    },
+    "PSLDiscordBot.Core.Common.SaveHandlerOnHttpClientTimeout": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Oops, there was some issues connecting to the internet! Please use /ping to check availability.\nFull error: {0}",
+        "zh-TW": "非常好網路，使我網路延遲旋轉！請使用/ping指令確認網路可靠性。",
+        "zh-CN": "非常好网络，使我网络延迟旋转！请使用/ping指令确认网络可靠性。"
+      }
+    },
+    "PSLDiscordBot.Core.Common.OptionsIndexOptionName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "index",
+        "zh-TW": "存檔索引",
+        "zh-CN": "存档索引"
+      }
+    },
+    "PSLDiscordBot.Core.Common.OptionsIndexOptionDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Save time converted to index, 0 is always latest. Do /get-time-index to get other index.",
+        "zh-TW": "存檔的索引，0永遠是最新的。使用/get-time-index以取得其他索引。",
+        "zh-CN": "存档的索引，0永远是最新的。使用/get-time-index以取得其他索引。"
+      }
+    },
+    "PSLDiscordBot.Core.Common.OptionsSongSearchOptionDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Searching strings, you can either put id, put alias, or put the song name.",
+        "zh-TW": "搜尋字串，您可以放入曲目id，名稱，或者昵稱。",
+        "zh-CN": "搜索字符串，您可以放入曲目id，名称，或者昵称。"
+      }
+    },
+    "PSLDiscordBot.Core.Common.OptionsSongSearchOptionName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "search",
+        "zh-TW": "搜尋",
+        "zh-CN": "搜索"
+      }
+    },
+    "PSLDiscordBot.Core.Common.MessagesSongSearchNoMatch": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Sorry, nothing matched your query.",
+        "zh-TW": "很抱歉，無法搜尋到任何東西。",
+        "zh-CN": "很抱歉，无法搜索到任何东西。"
+      }
+    },
+    "PSLDiscordBot.Core.Common.MessagesOperationDone": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "The operation has done successfully.",
+        "zh-TW": "執行完成。",
+        "zh-CN": "执行完成。"
+      }
+    },
+    "PSLDiscordBot.Core.Common.MessagesCommandUnavailable": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Sorry, this command is currently not available.",
+        "zh-TW": "很抱歉，這個指令目前不可用。",
+        "zh-CN": "很抱歉，这个指令目前不可用。"
+      }
+    },
+    "PSLDiscordBot.Core.Common.MessagesImageGenerated": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Generated!",
+        "zh-TW": "出來啦~",
+        "zh-CN": "出来啦~"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.SongScoresSongNotPlayed": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Sorry, you seems haven't played the songs you have been searching for.",
+        "zh-TW": "很抱歉，您似乎尚未玩過您搜尋的歌曲。",
+        "zh-CN": "很抱歉，您似乎尚未玩过您搜索的歌曲。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.SongScoresQueryResult": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "You looked for song `{0}`, showing...",
+        "zh-TW": "您查詢了`{0}`，產生中...",
+        "zh-CN": "您查询了`{0}`，产生中..."
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.SongScoresName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "song-scores"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.SongScoresDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Get scores for a specified song(s).",
+        "zh-TW": "取得所選歌曲的成績。",
+        "zh-CN": "取得所选歌曲的成绩。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.SongInfoName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "song-info"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.SongInfoDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Search info song.",
+        "zh-TW": "取得歌曲的資訊。",
+        "zh-CN": "取得歌曲的信息。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.SetShowCountDefaultName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "set-show-count-default"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.SetShowCountDefaultDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Set the default show count for /get-photo.",
+        "zh-TW": "設定/get-photo預設的顯示數目。",
+        "zh-CN": "设置/get-photo预设的显示数目。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.SetShowCountDefaultOptionCountName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "count",
+        "zh-TW": "數量",
+        "zh-CN": "数量"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.SetShowCountDefaultOptionCountDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "The default count going to be set. Put 20 for the classic b20 view.",
+        "zh-TW": "預設顯示數量。填入20以回退到經典b20顯示。",
+        "zh-CN": "预设显示数量。填入20以回退到经典b20显示。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.SetPrecisionName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "set-precision"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.SetPrecisionDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Set precision of value shown on commands that fetch your scores.",
+        "zh-TW": "設定成績顯示精度。",
+        "zh-CN": "设置成绩显示精度。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.SetPrecisionOptionPrecisionName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "precision",
+        "zh-TW": "精度",
+        "zh-CN": "精度"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.SetPrecisionOptionPrecisionDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Precision. Put 1 to get acc like 99.1, 2 to get acc like 99.12, repeat.",
+        "zh-TW": "精度。（範例）放入1將顯示99.1，放入2將顯示99.12，以此類推。",
+        "zh-CN": "精度。（范例）放入1将显示99.1，放入2将显示99.12，以此类推。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.ReportProblemName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "report-problem"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.ReportProblemDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Report a problem to author.",
+        "zh-TW": "回報一個問題。",
+        "zh-CN": "回报一个问题。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.ReportProblemOptionMessageName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "message",
+        "zh-TW": "訊息",
+        "zh-CN": "讯息"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.ReportProblemOptionMessageDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Describe the issue you met/Tell what was the problem.",
+        "zh-TW": "形容您遇到的問題。",
+        "zh-CN": "形容您遇到的问题。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.ReportProblemOptionAttachmentName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "attachments",
+        "zh-TW": "附件",
+        "zh-CN": "附件"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.ReportProblemOptionAttachmentDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "The attachment you want to attach (like screenshot/stacktrace), can be used to show the issue.",
+        "zh-TW": "附件，像是截圖或者棧追蹤資訊。",
+        "zh-CN": "附件，像是截图或者栈追踪信息。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.ReportProblemSuccess": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Thank you for your report, your report has been recorded.",
+        "zh-TW": "謝謝您的回報！已記錄。",
+        "zh-CN": "谢谢您的回报！已记录。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.ReportProblemAdminNotSetUp": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Warning: The operator of this copy of bot have not setup the AdminUser property correctly. Recorded to logs only.\nThank you for your report, your report has been recorded.",
+        "zh-TW": "警告：管理員尚未正確設置AdminUser屬性。僅記錄在日志。\n謝謝您的回報！已記錄。",
+        "zh-CN": "警告：管理员尚未正确设置AdminUser属性。仅记录在日志。\n谢谢您的回报！已记录。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.PingName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "ping"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.PingDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Check the availability of the core services.",
+        "zh-TW": "確認網路可用性。",
+        "zh-CN": "确认网络可用性。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.PingPinging": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Pinging... This can take a while.",
+        "zh-TW": "確認中... 這將會花費一段時間。",
+        "zh-CN": "确认中... 这将会花费一段时间。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.PingPingDone": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Ping complete, result:",
+        "zh-TW": "確認完成，結果：",
+        "zh-CN": "确认完成，结果："
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.AboutMeName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "about-me"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.AboutMeDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Get info about you in game.",
+        "zh-TW": "取得關於您游戲中的資訊。",
+        "zh-CN": "取得关于您游戏中的信息。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.LinkTokenName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "link-token"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.LinkTokenDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Link account by token.",
+        "zh-TW": "使用令牌連接賬號。",
+        "zh-CN": "使用令牌连接账号。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.LinkTokenOptionTokenName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "token",
+        "zh-TW": "令牌",
+        "zh-CN": "令牌"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.LinkTokenOptionTokenDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Your Phigros token.",
+        "zh-TW": "您的Phigros令牌。",
+        "zh-CN": "您的Phigros令牌。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.LinkTokenInvalidToken": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Invalid token!",
+        "zh-TW": "不正確的令牌！",
+        "zh-CN": "不正确的令牌！"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.LinkTokenSuccess": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Linked successfully!",
+        "zh-TW": "成功連接！",
+        "zh-CN": "成功连接！"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.LinkTokenSuccessButOverwritten": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "You have already registered, but still linked successfully!",
+        "zh-TW": "您已經注冊，但仍然成功連接！",
+        "zh-CN": "您已经注册，但仍然成功连接！"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.GetTimeIndexName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "get-time-index"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.GetTimeIndexDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Get save indexes, used to fetch older saves in various commands.",
+        "zh-TW": "取得存檔索引，用於檢視過去的存檔。",
+        "zh-CN": "取得存档索引，用于检视过去的存档。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.GetTokenName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "get-token"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.GetTokenDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Show your token.",
+        "zh-TW": "顯示您的令牌。",
+        "zh-CN": "显示您的令牌。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.GetTokenReply": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Your token: {0}||{1}|| (Click to reveal, DO NOT show it to other people.)",
+        "zh-TW": "您的令牌：{0}||{1}||（點擊以顯示，**請不要**給別人看！）",
+        "zh-CN": "您的令牌：{0}||{1}||（点击以显示，**请不要**给别人看！）"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.ExportScoresName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "export-scores"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.ExportScoresDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Export all your scores as a CSV file.",
+        "zh-TW": "匯出您所有的成績到一個CSV檔案。",
+        "zh-CN": "汇出您所有的成绩到一个CSV文件。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.ExportScoresReply": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "You have {0} scores, now exporting...",
+        "zh-TW": "您有{0}個成績，匯出中...",
+        "zh-CN": "您有{0}个成绩，汇出中..."
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.GetMoneyName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "get-money"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.GetMoneyDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Get amount of data/money/currency you have in Phigros.",
+        "zh-TW": "取得您在Phigros中有的data量。",
+        "zh-CN": "取得您在Phigros中有的data量。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.GetMoneyReply": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "You have {0}.",
+        "zh-TW": "您有 {0}.",
+        "zh-CN": "您有 {0}."
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.HelpName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "help"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.HelpDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Show help manuals.",
+        "zh-TW": "顯示幫助手冊。",
+        "zh-CN": "显示帮助手册。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.LoginName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "login"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.LoginDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Log in using TapTap.",
+        "zh-TW": "使用TapTap進行登入。",
+        "zh-CN": "使用TapTap进行登录。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.LoginBegin": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Please login using this url: {0}\nMake sure to login with the exact credentials you used in Phigros.\nThe page _may_ stuck at loading after you click 'grant', don't worry about it just close the page and the login process will continue anyway, after you do it this message should show that you logged in successfully.",
+        "zh-TW": "請使用此鏈接登入： {0}\n確保您使用正確的賬號登入。登入完成後，頁面可能會卡在加載中，但是實際上登入已經完成，關閉該頁面即可。",
+        "zh-CN": "请使用此链接登录： {0}\n确保您使用正确的账号登录。登录完成后，页面可能会卡在加载中，但是实际上登录已经完成，关闭该页面即可。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.LoginComplete": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Logged in successfully, all commands are now accessible!",
+        "zh-TW": "登入完成！您可以存取所有指令了！",
+        "zh-CN": "登录完成！您可以存取所有指令了！"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.LoginTimedOut": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "The login has been canceled due to timeout.",
+        "zh-TW": "該請求已超時。請重新執行此命令。",
+        "zh-CN": "该请求已超时。请重新执行此命令。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.DownloadAssetName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "download-asset"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.DownloadAssetDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Download assets about song.",
+        "zh-TW": "下載該曲目的素材。",
+        "zh-CN": "下载该曲目的素材。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.DownloadAssetOptionDownloadPEZName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "pez_chart_type",
+        "zh-TW": "打包pez譜面",
+        "zh-CN": "打包pez谱面"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Guest.DownloadAssetOptionDownloadPEZDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Select which chart to pack.",
+        "zh-TW": "選擇要加入pez的譜面。",
+        "zh-CN": "选择要加入pez的谱面。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.AddAliasName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "add-alias"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.AddAliasDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Add a song alias, for example alias Destruction 3.2.1 to 321",
+        "zh-TW": "增加曲目昵稱。",
+        "zh-CN": "增加曲目昵称。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.AddAliasOptionForSongName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "for",
+        "zh-TW": "爲了",
+        "zh-CN": "为了"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.AddAliasOptionForSongDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "For which song to add, inputting a song's name, id, or other alias is allowed.",
+        "zh-TW": "選擇要給哪一首歌增加昵稱，您可以放入曲目id，名稱，或者昵稱。",
+        "zh-CN": "选择要给哪一首歌增加昵稱，您可以放入曲目id，名称，或者昵称。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.AddAliasOptionAllayToAddName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "alias",
+        "zh-TW": "昵稱",
+        "zh-CN": "昵称"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.AddAliasOptionAllayToAddDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "The alias to add, note: you may only add one alias at one time.",
+        "zh-TW": "要增加的曲目昵稱。",
+        "zh-CN": "要增加的曲目昵称。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.AddAliasNoMatch": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Sorry, the song you're looking for seems does not exist.",
+        "zh-TW": "您所搜尋的曲目不存在！",
+        "zh-CN": "您所搜索的曲目不存在！"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.GetScoresName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "get-scores"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.GetScoresDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Get scores in text, useful when you don't have much mobile data.",
+        "zh-TW": "取得您的成績（純文字）",
+        "zh-CN": "取得您的成绩（纯文字）"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.GetScoresOptionCountName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "count",
+        "zh-TW": "數量",
+        "zh-CN": "数量"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.GetScoresOptionCountDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Count of scores to show.",
+        "zh-TW": "顯示成績的數量。",
+        "zh-CN": "显示成绩的数量。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.GetScoresDone": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Got score! Now showing...",
+        "zh-TW": "顯示中...",
+        "zh-CN": "显示中..."
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.GetPhotoName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "get-photo"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.GetPhotoDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Get summary photo of your scores.",
+        "zh-TW": "取得成績圖。",
+        "zh-CN": "取得成绩图。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.GetPhotoOptionCountName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "count",
+        "zh-TW": "數量",
+        "zh-CN": "数量"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.GetPhotoOptionCountDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Counts to show. (Default: 23, or set through /set-count-or-default)",
+        "zh-TW": "顯示成績的數量。（預設：23，可由/set-count-or-default設定）",
+        "zh-CN": "显示成绩的数量。（预设：23，可由/set-count-or-default设置）"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.GetPhotoOptionLowerBoundName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "lower_bound",
+        "zh-TW": "顯示範圍下限",
+        "zh-CN": "显示范围下限"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.GetPhotoOptionLowerBoundDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "The lower bound of the show range. ex. lower_bound: 69 and count: 42 show scores from 69 to 110.",
+        "zh-TW": "選擇從哪邊開始顯示，例如下限114以及數量401顯示#114~#514的成績。",
+        "zh-CN": "选择从哪边开始显示，例如下限114以及数量401显示#114~#514的成绩。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.GetPhotoOptionGradesToShowName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "show_what_grades",
+        "zh-TW": "顯示評級",
+        "zh-CN": "显示评级"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.GetPhotoOptionGradesToShowDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Change what grades to show. Default: Show all. Use comma-separated list, ex. S, Phi, Vu, Fc, False.",
+        "zh-TW": "設定什麽評級的成績會被顯示，預設：顯示所有。使用逗號分隔評級，例如：S, phi, v, fc, f",
+        "zh-CN": "设置什么评级的成绩会被显示，预设：显示所有。使用逗号分隔评级，例如：S, phi, v, fc, f"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.GetPhotoOptionCCFilterLowerBoundName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "cc_lower_bound",
+        "zh-TW": "定數顯示下限",
+        "zh-CN": "定数显示下限"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.GetPhotoOptionCCFilterLowerBoundDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Change the lower bound of scores' CC to show. Inclusive.",
+        "zh-TW": "設定定數顯示的下限（含）。",
+        "zh-CN": "设定定数显示的下限（含）。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.GetPhotoOptionCCFilterHigherBoundName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "cc_higher_bound",
+        "zh-TW": "定數顯示上限",
+        "zh-CN": "定数显示上限"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.GetPhotoOptionCCFilterHigherBoundDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Change the higher bound of scores' CC to show. Inclusive.",
+        "zh-TW": "設定定數顯示的上限（含）。",
+        "zh-CN": "设定定数显示的上限（含）。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.GetPhotoFailedParsingGrades": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Failed to parse showing grades. Valid values: {0}",
+        "zh-TW": "評級解析失敗！合規值：{0}",
+        "zh-CN": "评级解析失败！合规值：{0}"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.GetPhotoImageTooBig": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Sorry, the channel you are requesting this from does not allow me to send images larger than 10mb :(\nPlease either use count lower or equal to {0} or find other servers with boost.",
+        "zh-TW": "很抱歉，該頻道不允許我發送大於10mb的圖片:(\n請調低顯示數量到低於{0}或尋找有足夠加成的伺服器。",
+        "zh-CN": "很抱歉，该频道不允许我发送大于10mb的图片:(\n请调低显示数量到低于{0}或寻找有足够加成的服务器。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.GetPhotoStillInCoolDown": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Sorry, due to memory issues there is a cooldown when count is larger than {0}, {1} remain.",
+        "zh-TW": "很抱歉，由於内存原因當顯示數量大於{0}時有冷卻時間，還剩下{1}。",
+        "zh-CN": "很抱歉，由于内存原因当显示数量大于{0}时有冷却时间，还剩下{1}。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.GetPhotoGenerating": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Making right now, this can take a bit of time...",
+        "zh-TW": "正在產出中，這需要一點時間...",
+        "zh-CN": "正在产出中，这需要一点时间..."
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.GetPhotoError": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Error occurred during uploading:",
+        "zh-TW": "非常好錯誤，使我上傳失敗！",
+        "zh-CN": "非常好错误，使我上传失败！"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.MoreRksName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "more-rks"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.MoreRksDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Show you a list of possible chart to push to get more rks.",
+        "zh-TW": "顯示建議推分的譜面。",
+        "zh-CN": "显示建议推分的谱面。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.MoreRksOptionGetAtLeastName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "give_me_at_least",
+        "zh-TW": "最少給與",
+        "zh-CN": "最少给予"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.MoreRksOptionGetAtLeastDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "The least rks you wanted to get from each chart. (Default: have Phigros shown +0.01)",
+        "zh-TW": "選擇最少給與多少rks。（預設：讓Phigros顯示+0.01）",
+        "zh-CN": "选择最少给予多少rks。（预设：让Phigros显示+0.01）"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.MoreRksOptionCountName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "count",
+        "zh-TW": "數量",
+        "zh-CN": "数量"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.MoreRksOptionCountDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Controls how many charts should be shown. (Default 10)",
+        "zh-TW": "設定顯示數量。",
+        "zh-CN": "设置显示数量。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.MoreRksResult": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Showing {0} possible chart(s):",
+        "zh-TW": "顯示{0}個推分可能：",
+        "zh-CN": "显示{0}个推分可能："
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.RemoveAliasName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "remove-alias"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.RemoveAliasDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Remove a song alias.",
+        "zh-TW": "移除譜面昵稱。",
+        "zh-CN": "移除曲目昵称。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.RemoveAliasOptionForSongName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "for",
+        "zh-TW": "爲了",
+        "zh-CN": "为了"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.RemoveAliasOptionForSongDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "For which song to remove alias, inputing a song's name, id, or other alias is allowed.",
+        "zh-TW": "選擇要給哪一首歌移除昵稱，您可以放入曲目id，名稱，或者昵稱。",
+        "zh-CN": "选择要给哪一首歌移除昵稱，您可以放入曲目id，名称，或者昵称。 "
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.RemoveAliasOptionAllayToAddName": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "alias",
+        "zh-TW": "昵稱",
+        "zh-CN": "昵称"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.RemoveAliasOptionAllayToAddDescription": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "The alias to remove, note: you may only remove one alias at one time.",
+        "zh-TW": "要移除的曲目昵稱。",
+        "zh-CN": "要移除的曲目昵称。"
+      }
+    },
+    "PSLDiscordBot.Core.Command.Global.Normal.RemoveAliasNoMatch": {
+      "FallBackLanguages": [
+        "en-US"
+      ],
+      "LocalizedStrings": {
+        "en-US": "Sorry, the song you're looking for seems does not exist.",
+        "zh-TW": "您所搜索的曲目不存在！",
+        "zh-CN": "您所搜索的曲目不存在！"
+      }
+    }
+  }
+}
