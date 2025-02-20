@@ -417,6 +417,15 @@ function MakeExampleValue() {
 				"Difficulty": 2,
 				"Status": 4,
 				"Rks": 15.165506309156575
+			},
+			{
+				"Score": 941554,
+				"Accuracy": 69,
+				"ChartConstant": 15.9,
+				"Id": "FracturedAngel.DJRaisei",
+				"Difficulty": 2,
+				"Status": 4,
+				"Rks": 15.0
 			}
 		],
 		"ExtraArguments": null

@@ -324,7 +324,7 @@
 
         #Overflow {
             position: absolute;
-            top: 1864rem;
+            top: 2670rem;
             width: 100%;
             height: 200rem;
 
@@ -461,7 +461,7 @@
 
         if (ExampleMode) {
             window.INFO.ExtraArguments = {
-                "ShowCount": 10,
+                "ShowCount": 40,
                 "LowerBound": 0,
                 "AllowedGrades": [
                     Status.Bugged,
@@ -570,13 +570,13 @@
             numberBackground.appendChild(numberLine);
             const number = document.createElement("p");
             numberBackground.appendChild(number);
-            number.textContent = `#${i === 0 ? "φ" : i}`;
+            number.textContent = `#${i < 3 ? "φ" + (i + 1).toString() : i - 2}`;
 
             realElapsed++;
 			i++;
         }
 
-        if (realElapsed > 20 && allowed.length >= 10 && lowerBound === 0) {
+        if (realElapsed > 30 && allowed.length >= 10 && lowerBound === 0) {
             document.getElementById("Overflow").style.display = "unset";
         }
 
