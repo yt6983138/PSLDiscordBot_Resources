@@ -1,4 +1,4 @@
-import requests, zipfile, io, os
+import requests, zipfile, io, os, hashlib, json
 
 illustrationSrc = "https://github.com/7aGiven/Phigros_Resource/archive/refs/heads/illustration.zip"
 illustrationLowResSrc = "https://github.com/7aGiven/Phigros_Resource/archive/refs/heads/illustrationLowRes.zip"
@@ -19,6 +19,28 @@ def Main(config):
     print("Fetching avatar")
     avatarFetched = zipfile.ZipFile(io.BytesIO(requests.get(avatarSrc).content))
 
+    avatarMap = {}
+
+    for rawFileName in avatarFetched.namelist():
+        index = rawFileName.rfind("/") + 1
+        if (index < 1): continue
+        fileName = rawFileName[index:]
+        if (len(fileName) < 3): continue
+        
+        with avatarFetched.open(rawFileName) as file:
+            buffer = file.read()
+            hash = hashlib.sha1(buffer).hexdigest()
+            noExtFileName = fileName.replace(".png", "")
+            if ("Cipher1" in noExtFileName):
+                noExtFileName = "Cipher : /2&//<|0"
+            #print("writing %s, hash %s..." % (noExtFileName, hash))
+            with open("./Assets/Avatar/%s.png" % hash, "bw") as toWrite: 
+                toWrite.write(buffer)
+                avatarMap[noExtFileName]= hash
+
+    with open("./Assets/Avatar/AvatarInfo.json", "w") as hash_json:
+        hash_json.write(json.dumps(avatarMap))
+
     for fileName in illustrationLowResFetched.namelist():
         index = fileName.rfind("/") + 1
         if (index < 1): continue
@@ -28,7 +50,7 @@ def Main(config):
         dir = "./Assets/Tracks/%s/" % toWriteName
         os.makedirs(dir, exist_ok=True)
         
-        print("writing %s..." % toWriteName)
+        #print("writing %s..." % toWriteName)
         with illustrationLowResFetched.open("Phigros_Resource-illustrationLowRes/" + fileName) as file:
             with open(dir + "IllustrationLowRes.png", "bw") as toWrite: toWrite.write(file.read())
         with illustrationBlurFetched.open("Phigros_Resource-illustrationBlur/" + fileName) as file:
