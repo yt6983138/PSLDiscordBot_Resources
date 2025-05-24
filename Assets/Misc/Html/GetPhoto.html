@@ -24,6 +24,9 @@
             margin: 0%;
         }
 
+        .TextSize16 {
+            font-size: 16rem;
+        }
         .TextSize22 {
             font-size: 22rem;
         }
@@ -128,38 +131,44 @@
         #DateTime {
             position: absolute;
 
-            top: 256rem;
-            height: 130rem;
+            top: 240rem;
+            height: 148rem;
             width: 381rem;
 
-            clip-path: polygon(0% 0%, 100% 0%, 348rem 100%, 0% 100%);
+            clip-path: polygon(0% 0%, 100% 0%, 342rem 100%, 0% 100%);
 
             background-color: rgba(0, 0, 0, 0.6);
 
             & #Date {
                 position: absolute;
                 color: white;
-                top: 6rem;
+                top: 2rem;
                 left: 36rem;
             }
 
             & #Time {
                 position: absolute;
                 color: white;
-                top: 46rem;
+                top: 42rem;
                 left: 36rem;
             }
 
             & #QueryTime {
                 position: absolute;
                 color: white;
-                top: 90rem;
+                top: 86rem;
+                left: 36rem;
+            }
+            & #SyncTime {
+                position: absolute;
+                color: white;
+                top: 120rem;
                 left: 36rem;
             }
 
             & #DateTimeLine {
                 clip-path: polygon(
-                        344rem 100%,
+                        338rem 100%,
                         377rem 0%,
                         100% 0%,
                         100% 100%
@@ -375,6 +384,7 @@
         <div id="DateTime">
             <div id="DateTimeLine"></div>
             <p id="QueryTime" class="Text TextSize22">Query Time</p>
+            <p id="SyncTime" class="Text TextSize16"></p>
             <p id="Date" class="Text TextSize32">date</p>
             <p id="Time" class="Text TextSize32">Time</p>
         </div>
@@ -449,7 +459,7 @@
         //document.getElementById("Main").style =
         //	"aspect-ratio: 934 / 2048;";
 
-        let now = new Date(Date.now());
+        const now = new Date(Date.now());
         document.getElementById(
             "Date"
         ).textContent = `${now.getMonth() + 1}/${now.getDate()}/${now.getFullYear()}`;
@@ -458,6 +468,7 @@
         }:${("0" + now.getMinutes().toString()).slice(-2)}:${(
             "0" + now.getSeconds().toString()
         ).slice(-2)} ${now.getHours() > 12 ? "PM" : "AM"}`;
+        document.getElementById("SyncTime").textContent = `Synced ${FormatDateOffset(new Date(window.INFO.SaveModificationDate), now)} ago`;
 
         if (ExampleMode) {
             window.INFO.ExtraArguments = {
@@ -594,18 +605,52 @@
     }
 
     function CreateScoreTd() {
-        let td = document.createElement("td");
+        const td = document.createElement("td");
         td.classList.add("ScoreCell");
 
         return td;
     }
 
     function CreateTextForLeftInfos(text, height) {
-        var e = document.createElement("p");
+        const e = document.createElement("p");
         e.textContent = text;
         e.style = `top: ${height}`;
         if (GetUserPrecisionInt() > 3) e.classList.add("Stretched");
         return e;
+    }
+
+    /**
+     *
+     * @param {Date} dateBefore
+     * @param {Date} dateAfter
+     * @param {number} shouldShowAfter
+     * @param {number} digits
+     */
+    function FormatDateOffset(dateBefore, dateAfter, shouldShowAfter = 1, digits = 1) {
+        const avgDaysPerMonth = 30.436849916;
+
+        const milliDiff = dateAfter - dateBefore;
+        const secDiff = milliDiff / 1000;
+        const minDiff = secDiff / 60;
+        const hourDiff = minDiff / 60;
+        const dayDiff = hourDiff / 24;
+        const monthDiff = dayDiff / avgDaysPerMonth;
+        const yearDiff = monthDiff / 12;
+
+        if (yearDiff > shouldShowAfter) {
+            return `${yearDiff.toFixed(digits)} years`;
+        } else if (monthDiff > shouldShowAfter) {
+            return `${monthDiff.toFixed(digits)} months`;
+        } else if (dayDiff > shouldShowAfter) {
+            return `${dayDiff.toFixed(digits)} days`;
+        } else if (hourDiff > shouldShowAfter) {
+            return `${hourDiff.toFixed(digits)} hours`;
+        } else if (minDiff > shouldShowAfter) {
+            return `${minDiff.toFixed(digits)} minutes`;
+        } else if (secDiff > shouldShowAfter) {
+            return `${secDiff.toFixed(digits)} seconds`;
+        }
+        return `${milliDiff.toFixed(digits)} milliseconds`;
     }
 
     Initialize();
