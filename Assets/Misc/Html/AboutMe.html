@@ -1,0 +1,381 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <script src="./Common.js"></script>
+    <link rel="stylesheet" type="text/css" href="./Common.css"/>
+
+    <style>
+        :root {
+            --ConvertFromWidth: 768;
+
+            font-size: calc(100vw / var(--ConvertFromWidth));
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+
+        body {
+            padding: 0%;
+            margin: 0%;
+            background-color: black;
+            /*background-image: var(--MissingTexture);*/
+            /*background-repeat: no-repeat;*/
+            /*background-position: center;*/
+            /*background-size: cover;*/
+        }
+
+        p {
+            margin: 0%;
+        }
+
+        .white {
+            color: white;
+        }
+
+        .TextSize12 {
+            font-size: 12rem;
+        }
+
+        .TextSize14 {
+            font-size: 14rem;
+        }
+
+        .TextSize16 {
+            font-size: 16rem;
+        }
+
+        .TextSize22 {
+            font-size: 22rem;
+        }
+
+        .TextSize24 {
+            font-size: 24rem;
+        }
+
+        .TextSize32 {
+            font-size: 32rem;
+        }
+
+        .TextSize36 {
+            font-size: 36rem;
+        }
+
+        .TextSize52 {
+            font-size: 52rem;
+        }
+
+        .TextSize64 {
+            font-size: 64rem;
+        }
+
+        #Main {
+            width: 100%;
+            height: calc(var(--ConvertFromWidth) * 1rem);
+            display: inline-flex;
+        }
+
+        .AttributeBlock {
+            display: inline-flex;
+            white-space: nowrap;
+            position: relative;
+
+            & .AttributeBody {
+                background-color: #edeeee8c;
+                white-space: nowrap;
+                display: inline-block;
+                padding-left: 4rem;
+                padding-right: 4rem;
+
+                height: 18rem;
+                min-width: 72rem;
+                width: fit-content;
+
+                & p {
+                    color: black;
+                    margin-top: -2rem;
+                }
+            }
+
+            & .AttributeLine {
+                position: relative;
+                bottom: 0;
+                white-space: nowrap;
+                display: inline-block;
+                height: 1.25rem;
+                margin: auto auto 0;
+                flex: 1;
+                background-color: #edeeee8c;
+            }
+        }
+
+        .PropertyBlock {
+            background-color: #6f7d823f;
+            height: 44rem;
+
+            & p {
+                font-size: 20rem;
+                color: white;
+                position: absolute;
+                margin: 5rem 5rem auto;
+            }
+        }
+
+        .Panel {
+            background-color: #1c2224;
+            position: relative;
+            margin: 3%;
+
+            & .TopBar {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 18rem;
+
+                white-space: nowrap;
+                display: inline-flex;
+                background-color: #2988d226;
+                z-index: 50;
+
+                & .TabTriangle {
+                    position: relative;
+                    top: -2rem;
+                    left: -2rem;
+                    width: 7rem;
+                    height: 18rem;
+                    background-color: #1d71b3;
+
+                    clip-path: polygon(0 0, 100% 50%, 0 100%);
+
+                    white-space: nowrap;
+                    display: inline-block;
+                }
+
+                & .TabName {
+                    position: relative;
+                    top: -2rem;
+                    left: -2rem;
+                    padding-left: 8rem;
+                    padding-right: 30rem;
+
+                    height: 18rem;
+                    width: fit-content;
+                    background-color: #1d71b3;
+
+                    & p {
+                        position: relative;
+                        top: -2rem;
+                        color: white;
+                        font-size: 14rem;
+                    }
+                }
+            }
+        }
+
+        #Left {
+            width: 345rem;
+
+            & .PropertyBlock {
+                margin: 5rem 5%;
+
+
+                & #CMImage {
+                    position: relative;
+                    background-size: cover;
+                    background-image: var(--MissingTexture);
+                    top: 8rem;
+                    left: 110rem;
+                    aspect-ratio: 130 / 64;
+                    /*width: 65rem;*/
+                    height: 32rem;
+
+                    text-align: center;
+
+                    & #CMText {
+                        font-size: 26rem;
+                        position: relative;
+                        top: -12rem;
+                    }
+                }
+            }
+
+            & #UserBasicInfoBlock {
+                position: relative;
+                background: var(--MissingTexture);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                margin: 30rem auto 12rem;
+                width: 320rem;
+                height: 169rem;
+
+                & #UserNickBlock {
+                    position: absolute;
+                    width: 100%;
+                    height: 52rem;
+                    background-color: #0000007f;
+                    margin: 0;
+                    bottom: 18rem;
+                    padding-top: 0;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    display: flex;
+
+                    & p {
+                        color: white;
+                        position: relative;
+                        font-size: 24rem;
+                        margin-left: 105rem;
+                        margin-right: 0;
+                    }
+                }
+
+                & #Avatar {
+                    position: absolute;
+                    bottom: -12rem;
+                    left: 6rem;
+                    margin: 0;
+
+                    width: 112rem;
+                    height: 112rem;
+
+                    background-image: var(--MissingTexture);
+
+                    clip-path: polygon(
+                            20rem 18.5rem,
+                            0% 93.5rem,
+                            92rem 93.5rem,
+                            100% 18.5rem
+                    );
+                }
+            }
+
+            & .AttributeBlock {
+                left: 5%;
+            }
+
+            & #PropertiesAttribute {
+                width: 90%;
+                margin: 8rem auto 4rem;
+            }
+
+            & #DescriptionAttribute {
+                width: 90%;
+                margin: 3rem auto 4rem;
+            }
+
+            & .UnityConvertedRoot {
+                position: relative;
+                width: 90%;
+                margin: 0 5% 0;
+                color: white;
+            }
+
+            & #DateTime {
+                position: absolute;
+                bottom: 2rem;
+                left: 3%;
+                color: white;
+            }
+            & #DateTimeSeparator {
+                background-color: #edeeee8c;
+                height: 1rem;
+                border: 0;
+                position: absolute;
+                bottom: 25rem;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+            }
+        }
+
+        #Right {
+            width: 345rem;
+
+        }
+    </style>
+</head>
+<body>
+<div id="Main">
+    <div id="Left" class="Panel">
+        <div class="TopBar">
+            <div class="TabName">
+                <p class="CondensedText">//?/USER_INFO</p>
+            </div>
+            <div class="TabTriangle"></div>
+        </div>
+
+        <div id="UserBasicInfoBlock">
+            <div id="UserNickBlock">
+            </div>
+            <div id="Avatar"></div>
+        </div>
+        <div id="PropertiesAttribute" class="AttributeBlock">
+            <div class="AttributeBody">
+                <p class="TextSize14">PROPERTIES</p>
+            </div>
+            <div class="AttributeLine"></div>
+        </div>
+        <div class="PropertyBlock">
+            <p id="RksText">Rks: </p>
+        </div>
+        <div class="PropertyBlock">
+            <p id="DataText">Data: </p>
+        </div>
+        <div class="PropertyBlock">
+            <p>Challenge: </p>
+            <div id="CMImage">
+                <p id="CMText">-1</p>
+            </div>
+        </div>
+        <div id="DescriptionAttribute" class="AttributeBlock">
+            <div class="AttributeBody">
+                <p class="TextSize14">DESCRIPTION</p>
+            </div>
+            <div class="AttributeLine"></div>
+        </div>
+        <hr id="DateTimeSeparator"/>
+        <p id="DateTime" class="TextSize14">[Unassigned]</p>
+    </div>
+    <div id="Right" class="Panel">
+        <div class="TopBar">
+            <div class="TabName">
+                <p class="CondensedText">//?/PLAY_STATISTICS</p>
+            </div>
+            <div class="TabTriangle"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    async function Initialize() {
+        await InitializePSLRender();
+
+        document.getElementById("Avatar").style.backgroundImage = `url('${GetAvatarFilePath()}')`;
+        document.getElementById("UserBasicInfoBlock").style.backgroundImage = `url('${GetUserBackgroundBlur()}')`;
+        document.getElementById("UserNickBlock").appendChild(ConvertUnityRichText(GetUserNickName(), 24));
+        document.getElementById("DataText").textContent += GetMoneyFormatted();
+        document.getElementById("RksText").textContent += GetRksFormatted();
+
+        document.getElementById("CMImage").style.backgroundImage = `url('${GetCMBackgroundFilePath()}')`;
+        document.getElementById("CMText").textContent = GetCMLevel();
+
+        if (GetCMLevel() === 0) document.getElementById("CMImage").parentElement.delete();
+
+        document.getElementById("Left").appendChild(ConvertUnityRichText(INFO.GameUserInfo.Intro, 16));
+        const now = new Date(Date.now());
+        const generated = `${now.getHours() > 12 ? now.getHours() - 12 : now.getHours()}:${
+            ("0" + now.getMinutes().toString()).slice(-2)}:${
+            ("0" + now.getSeconds().toString()).slice(-2)} ${
+            now.getHours() > 12 ? "PM" : "AM"}`;
+        const synced = FormatDateOffset(new Date(window.INFO.SaveModificationDate), now);
+
+        document.getElementById("DateTime").textContent = `Generated ${generated}, synced ${synced} ago.`;
+
+        SetReady(true);
+    }
+
+    Initialize();
+</script>
+</body>
+</html>

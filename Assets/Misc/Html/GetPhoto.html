@@ -619,40 +619,6 @@
         return e;
     }
 
-    /**
-     *
-     * @param {Date} dateBefore
-     * @param {Date} dateAfter
-     * @param {number} shouldShowAfter
-     * @param {number} digits
-     */
-    function FormatDateOffset(dateBefore, dateAfter, shouldShowAfter = 1, digits = 1) {
-        const avgDaysPerMonth = 30.436849916;
-
-        const milliDiff = dateAfter - dateBefore;
-        const secDiff = milliDiff / 1000;
-        const minDiff = secDiff / 60;
-        const hourDiff = minDiff / 60;
-        const dayDiff = hourDiff / 24;
-        const monthDiff = dayDiff / avgDaysPerMonth;
-        const yearDiff = monthDiff / 12;
-
-        if (yearDiff > shouldShowAfter) {
-            return `${yearDiff.toFixed(digits)} years`;
-        } else if (monthDiff > shouldShowAfter) {
-            return `${monthDiff.toFixed(digits)} months`;
-        } else if (dayDiff > shouldShowAfter) {
-            return `${dayDiff.toFixed(digits)} days`;
-        } else if (hourDiff > shouldShowAfter) {
-            return `${hourDiff.toFixed(digits)} hours`;
-        } else if (minDiff > shouldShowAfter) {
-            return `${minDiff.toFixed(digits)} minutes`;
-        } else if (secDiff > shouldShowAfter) {
-            return `${secDiff.toFixed(digits)} seconds`;
-        }
-        return `${milliDiff.toFixed(digits)} milliseconds`;
-    }
-
     Initialize();
 </script>
 </body>

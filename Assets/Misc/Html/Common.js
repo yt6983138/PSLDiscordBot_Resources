@@ -48,7 +48,7 @@ const ExistingPSLKeys = [
     "INFO_MAP_ID_NAME",
 ];
 
-const ExampleIllustration = "./ExampleIllustration.png";
+const ExampleIllustration = "./ExampleIllustration2.png";
 
 const RecordDifficultyToName = ["EZ", "HD", "IN", "AT"];
 const _RankIdToName = ["NotFc", "Fc", "Phi", "Vu", "S", "A", "B", "C", "False"];
@@ -206,6 +206,21 @@ function GetRksFormatted() {
     return FloatToUserPrecisionString(GetRks());
 }
 
+function GetMoneyFormatted() {
+    const moni = INFO.UserProgress.Money;
+    let str = "";
+
+    if (moni.PiB > 0) str += `${moni.PiB} PiB, `;
+    if (moni.TiB > 0) str += `${moni.TiB} TiB, `;
+    if (moni.GiB > 0) str += `${moni.GiB} GiB, `;
+    if (moni.MiB > 0) str += `${moni.MiB} MiB, `;
+    if (moni.KiB > 0) str += `${moni.KiB} KiB, `;
+
+    if (str.length < 3) return "0 KiB";
+
+    return str.slice(0, -2);
+}
+
 function GetCMBackgroundFilePath() {
     if (ExampleMode) return "./ExampleChallenge.png";
 
@@ -333,4 +348,38 @@ function GetViewportSize() {
 
 function SetReady(ye) {
     window.pslReady = ye;
+}
+
+/**
+ *
+ * @param {Date} dateBefore
+ * @param {Date} dateAfter
+ * @param {number} shouldShowAfter
+ * @param {number} digits
+ */
+function FormatDateOffset(dateBefore, dateAfter, shouldShowAfter = 1, digits = 1) {
+    const avgDaysPerMonth = 30.436849916;
+
+    const milliDiff = dateAfter - dateBefore;
+    const secDiff = milliDiff / 1000;
+    const minDiff = secDiff / 60;
+    const hourDiff = minDiff / 60;
+    const dayDiff = hourDiff / 24;
+    const monthDiff = dayDiff / avgDaysPerMonth;
+    const yearDiff = monthDiff / 12;
+
+    if (yearDiff > shouldShowAfter) {
+        return `${yearDiff.toFixed(digits)} years`;
+    } else if (monthDiff > shouldShowAfter) {
+        return `${monthDiff.toFixed(digits)} months`;
+    } else if (dayDiff > shouldShowAfter) {
+        return `${dayDiff.toFixed(digits)} days`;
+    } else if (hourDiff > shouldShowAfter) {
+        return `${hourDiff.toFixed(digits)} hours`;
+    } else if (minDiff > shouldShowAfter) {
+        return `${minDiff.toFixed(digits)} minutes`;
+    } else if (secDiff > shouldShowAfter) {
+        return `${secDiff.toFixed(digits)} seconds`;
+    }
+    return `${milliDiff.toFixed(digits)} milliseconds`;
 }
