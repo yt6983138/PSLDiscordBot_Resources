@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8"/>
     <script src="./Common.js"></script>
@@ -69,7 +69,7 @@
 
         #Main {
             width: 100%;
-            height: calc(var(--ConvertFromWidth) * 1rem);
+            height: calc(800rem);
             display: inline-flex;
         }
 
@@ -77,6 +77,8 @@
             display: inline-flex;
             white-space: nowrap;
             position: relative;
+            width: 90%;
+            left: 5%;
 
             & .AttributeBody {
                 background-color: #edeeee8c;
@@ -123,6 +125,7 @@
             background-color: #1c2224;
             position: relative;
             margin: 3%;
+            z-index: 40;
 
             & .TopBar {
                 position: absolute;
@@ -171,8 +174,82 @@
             }
         }
 
+        .SubBar {
+            position: relative;
+            filter: brightness(1.2);
+            transform: translateY(-3rem) translateX(-3rem);
+            height: 100%;
+            width: 5%;
+
+            & .VerticalLine {
+                background-color: white;
+                position: absolute;
+                width: 1rem;
+                top: 100%;
+                left: min(10rem, calc(100% - 2rem));
+
+                height: 10rem; /* require code to set properly */
+
+                & .BottomLine {
+                    background-color: white;
+                    width: 5rem;
+                    height: 1rem;
+                    position: absolute;
+                    top: 100%;
+
+                    & p {
+                        color: white;
+                        position: absolute;
+                        left: 8rem;
+                        top: -10rem;
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+
+        .StatisticsBlock {
+            position: relative;
+            width: 100%;
+            margin-bottom: 65rem;
+            margin-top: 0;
+
+            & .CompletionCount {
+                color: white;
+                position: absolute;
+                top: -4rem;
+                right: 6%;
+            }
+            & .PropertyBlock {
+                position: absolute;
+            }
+
+            & .StatisticsBar {
+                position: relative;
+                margin-top: 10rem;
+                background-color: #4a4a4a7f;
+                height: 24rem;
+                width: 90%;
+                left: 5%;
+                display: flex;
+
+                & .APBar {
+                    background-color: #f0e91d9f;
+                }
+
+                & .FCBar {
+                    background-color: #2695cb9f;
+                }
+
+                & .ClearBar {
+                    background-color: #ffffff9f;
+                }
+            }
+        }
+
         #Left {
             width: 345rem;
+            transform: rotateY(12deg);
 
             & .PropertyBlock {
                 margin: 5rem 5%;
@@ -240,6 +317,8 @@
                     height: 112rem;
 
                     background-image: var(--MissingTexture);
+                    background-repeat: no-repeat;
+                    background-size: cover;
 
                     clip-path: polygon(
                             20rem 18.5rem,
@@ -250,17 +329,11 @@
                 }
             }
 
-            & .AttributeBlock {
-                left: 5%;
-            }
-
             & #PropertiesAttribute {
-                width: 90%;
                 margin: 8rem auto 4rem;
             }
 
             & #DescriptionAttribute {
-                width: 90%;
                 margin: 3rem auto 4rem;
             }
 
@@ -277,6 +350,7 @@
                 left: 3%;
                 color: white;
             }
+
             & #DateTimeSeparator {
                 background-color: #edeeee8c;
                 height: 1rem;
@@ -291,7 +365,18 @@
 
         #Right {
             width: 345rem;
+            margin-left: 0;
+            transform: rotateY(-10deg);
 
+            & .PropertyBlock {
+                margin-top: 5rem;
+                margin-bottom: 5rem;
+            }
+
+            & #EZStatistics {
+                top: 30rem;
+                margin-bottom: 96rem;
+            }
         }
     </style>
 </head>
@@ -344,6 +429,139 @@
             </div>
             <div class="TabTriangle"></div>
         </div>
+
+        <div class="StatisticsBlock" id="EZStatistics">
+            <p class="CompletionCount TextSize14">[unassigned]</p>
+            <div class="AttributeBlock">
+                <div class="AttributeBody">
+                    <p class="TextSize14">[unassigned]</p>
+                </div>
+                <div class="AttributeLine"></div>
+            </div>
+            <div class="StatisticsBar">
+                <div class="APBar SubBar">
+                    <div class="VerticalLine">
+                        <div class="BottomLine">
+                            <p class="TextSize14 APBarText">[unassigned]</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="FCBar SubBar">
+                    <div class="VerticalLine">
+                        <div class="BottomLine">
+                            <p class="TextSize14 FCBarText">[unassigned]</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="ClearBar SubBar">
+                    <div class="VerticalLine">
+                        <div class="BottomLine">
+                            <p class="TextSize14 ClearBarText">[unassigned]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="StatisticsBlock" id="HDStatistics">
+            <p class="CompletionCount TextSize14">[unassigned]</p>
+            <div class="AttributeBlock">
+                <div class="AttributeBody">
+                    <p class="TextSize14">[unassigned]</p>
+                </div>
+                <div class="AttributeLine"></div>
+            </div>
+            <div class="StatisticsBar">
+                <div class="APBar SubBar">
+                    <div class="VerticalLine">
+                        <div class="BottomLine">
+                            <p class="TextSize14 APBarText">[unassigned]</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="FCBar SubBar">
+                    <div class="VerticalLine">
+                        <div class="BottomLine">
+                            <p class="TextSize14 FCBarText">[unassigned]</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="ClearBar SubBar">
+                    <div class="VerticalLine">
+                        <div class="BottomLine">
+                            <p class="TextSize14 ClearBarText">[unassigned]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="StatisticsBlock" id="INStatistics">
+            <p class="CompletionCount TextSize14">[unassigned]</p>
+            <div class="AttributeBlock">
+                <div class="AttributeBody">
+                    <p class="TextSize14">[unassigned]</p>
+                </div>
+                <div class="AttributeLine"></div>
+            </div>
+            <div class="StatisticsBar">
+                <div class="APBar SubBar">
+                    <div class="VerticalLine">
+                        <div class="BottomLine">
+                            <p class="TextSize14 APBarText">[unassigned]</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="FCBar SubBar">
+                    <div class="VerticalLine">
+                        <div class="BottomLine">
+                            <p class="TextSize14 FCBarText">[unassigned]</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="ClearBar SubBar">
+                    <div class="VerticalLine">
+                        <div class="BottomLine">
+                            <p class="TextSize14 ClearBarText">[unassigned]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="StatisticsBlock" id="ATStatistics">
+            <p class="CompletionCount TextSize14">[unassigned]</p>
+            <div class="AttributeBlock">
+                <div class="AttributeBody">
+                    <p class="TextSize14">[unassigned]</p>
+                </div>
+                <div class="AttributeLine"></div>
+            </div>
+            <div class="StatisticsBar">
+                <div class="APBar SubBar">
+                    <div class="VerticalLine">
+                        <div class="BottomLine">
+                            <p class="TextSize14 APBarText">[unassigned]</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="FCBar SubBar">
+                    <div class="VerticalLine">
+                        <div class="BottomLine">
+                            <p class="TextSize14 FCBarText">[unassigned]</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="ClearBar SubBar">
+                    <div class="VerticalLine">
+                        <div class="BottomLine">
+                            <p class="TextSize14 ClearBarText">[unassigned]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="BestPerformance">
+            
+        </div>
     </div>
 </div>
 
@@ -372,7 +590,59 @@
 
         document.getElementById("DateTime").textContent = `Generated ${generated}, synced ${synced} ago.`;
 
+        for (const diff in Difficulty) {
+            SetupStatisticBlock(diff + "Statistics", diff)
+
+        }
+
         SetReady(true);
+    }
+
+    function SetupStatisticBlock(elementName, difficulty) {
+        const statisticBlock = document.getElementById(elementName);
+        const bars = statisticBlock.getElementsByClassName("StatisticsBar")[0];
+        const summaryText = statisticBlock.querySelector(".CompletionCount");
+        const title = statisticBlock.querySelector(".AttributeBlock > .AttributeBody > p");
+
+        const ap = bars.querySelector(".APBar");
+        const fc = bars.querySelector(".FCBar");
+        const clear = bars.querySelector(".ClearBar");
+
+        const statistics = window.INFO.User.PlayStatistics;
+
+        const totalCount = statistics[`TotalSong${difficulty}Count`];
+
+        const apCount = statistics[`Total${difficulty}PhiCount`];
+        let fcCount = statistics[`Total${difficulty}FcCount`];
+        let clearCount = statistics[`${difficulty}ClearCount`];
+
+        summaryText.textContent = `${FloatToUserPrecisionString(clearCount / totalCount * 100)}% Completed`;
+        title.textContent = difficulty;
+
+        clearCount -= fcCount;
+        fcCount -= apCount;
+
+        SetupStatisticBar(ap, 46, totalCount, apCount);
+        SetupStatisticBar(fc, 29, totalCount, fcCount);
+        SetupStatisticBar(clear, 12, totalCount, clearCount);
+    }
+
+    function SetupStatisticBar(element, verticalLineLength, totalCount, actualCount) {
+        const verticalLine = element.querySelector(".VerticalLine");
+        const bottomLine = verticalLine.querySelector(".BottomLine");
+        const text = bottomLine.querySelector("p");
+
+        verticalLine.style.height = verticalLineLength.toString() + "rem";
+
+        const percent = actualCount / totalCount * 100;
+        element.style.width = `${percent}%`
+
+        if (actualCount === 0) {
+            element.remove();
+            return;
+        }
+
+        text.textContent = `${FloatToUserPrecisionString(percent)}% ${actualCount}/${totalCount}`;
     }
 
     Initialize();
