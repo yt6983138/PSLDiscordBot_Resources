@@ -73,6 +73,14 @@ async function InitializePSLRender() {
 
 /**
  *
+ * @param {string} str
+ * @returns {string}
+ */
+function ForceNormalizePath(str) {
+    return str.replaceAll("\\", "/");
+}
+/**
+ *
  * @param {string} paths
  * @returns {string}
  */
@@ -187,7 +195,7 @@ function RankIdToName(id) {
 }
 
 function GetAvatarFilePath() {
-    return window.INFO_IMAGE_PATHS.User.Avatar;
+    return ForceNormalizePath(window.INFO_IMAGE_PATHS.User.Avatar);
 }
 
 function GetUserPrecisionInt() {
