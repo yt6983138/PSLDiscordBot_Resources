@@ -383,3 +383,12 @@ function FormatDateOffset(dateBefore, dateAfter, shouldShowAfter = 1, digits = 1
     }
     return `${milliDiff.toFixed(digits)} milliseconds`;
 }
+
+/**
+ *
+ * @param {number} min
+ * @param {number} max
+ */
+function RandomNumber(min, max) {
+    return Math.random() * (max - min) + min;
+}

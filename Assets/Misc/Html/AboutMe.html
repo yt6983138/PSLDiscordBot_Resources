@@ -69,7 +69,7 @@
 
         #Main {
             width: 100%;
-            height: calc(800rem);
+            height: calc(850rem);
             display: inline-flex;
         }
 
@@ -220,6 +220,7 @@
                 top: -4rem;
                 right: 6%;
             }
+
             & .PropertyBlock {
                 position: absolute;
             }
@@ -377,6 +378,96 @@
                 top: 30rem;
                 margin-bottom: 96rem;
             }
+
+            & #MemorablePerformance {
+                position: relative;
+
+                & #MemorablePerformanceImage {
+                    position: relative;
+                    width: 85%;
+                    margin-top: 1.5%;
+                    margin-left: 7.5%;
+                    aspect-ratio: 254/136;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    clip-path: polygon(14.3468859% 0, 100% 0, 85.6531141% 100%, 0% 100%);
+                }
+
+                & #MemorablePerformanceInfo {
+                    position: absolute;
+
+                    width: 80%;
+                    left: 7.5%;
+                    top: 10%;
+
+                    & #MemorablePerformanceRank {
+                        position: relative;
+
+                        top: 110rem;
+                        left: 212rem;
+
+                        width: 100rem;
+                        height: 52rem;
+                        background-color: rgba(0, 0, 0, 0.4);
+                        border-right: 2rem solid white;
+                        z-index: -1;
+
+                        & img {
+                            position: absolute;
+                            right: 2rem;
+                            width: 48rem;
+                        }
+                    }
+
+                    & #MemorablePerformanceLines {
+                        position: absolute;
+
+                        top: 5.5rem;
+                        width: 100%;
+                        left: 7.5%;
+                        height: 46rem;
+                        background-color: rgba(0, 0, 0, 0.4);
+                        clip-path: polygon(7.5% 0, 98.5% 0, 94.5% 100%, 3% 100%);
+
+                        & p {
+                            position: relative;
+                            color: white;
+                            font-size: 14rem;
+                        }
+
+                        & #MemorablePerformanceFirstLine {
+                            left: 22rem;
+                        }
+
+                        & #MemorablePerformanceSecondLine {
+                            left: 16rem;
+                        }
+
+                        & hr {
+                            margin: 0;
+                        }
+                    }
+                }
+
+                & hr {
+                    position: relative;
+                    border: none;
+                    border-top: 1rem solid lightgray;
+                    margin: 2% 1% 1%;
+                }
+
+                & .UnityConvertedRoot {
+                    position: absolute;
+                    margin: 0 5% 0;
+                    font-size: 16rem;
+                    color: white;
+                }
+            }
+        }
+        .Circles {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(5rem);
         }
     </style>
 </head>
@@ -559,8 +650,28 @@
             </div>
         </div>
 
-        <div id="BestPerformance">
-            
+        <div id="MemorablePerformance">
+            <div class="AttributeBlock">
+                <div class="AttributeBody">
+                    <p class="TextSize14">MEMORABLE_PERFORMANCE</p>
+                </div>
+                <div class="AttributeLine"></div>
+            </div>
+
+            <div id="MemorablePerformanceImage"></div>
+            <div id="MemorablePerformanceInfo">
+                <div id="MemorablePerformanceRank">
+                    <img/>
+                </div>
+
+                <div id="MemorablePerformanceLines">
+                    <p id="MemorablePerformanceFirstLine">[unassigned]</p>
+                    <hr/>
+                    <p id="MemorablePerformanceSecondLine">[unassigned]</p>
+                </div>
+            </div>
+
+            <hr/>
         </div>
     </div>
 </div>
@@ -568,6 +679,23 @@
 <script>
     async function Initialize() {
         await InitializePSLRender();
+
+        if (ExampleMode) {
+            window.INFO.ExtraArguments = {
+                MemorablePerformance: {
+                    "Score": 999618,
+                    "Accuracy": 99.95752716064453,
+                    "ChartConstant": 15.7,
+                    "Id": "TECHNOPOLIS2085.PRASTIKDANCEFLOOR",
+                    "Difficulty": 3,
+                    "Status": 1,
+                    "Rks": 15.670377192282507
+                },
+                Thoughts: "<color=#00ffff>啊🤪～啊🤪～啊咦😬啊咦😬啊→啊↑啊↓😨啊😰～嗯💥哎哎🤗哎哦哎嗯😋～哦哎🥳愛愛愛愛愛😍啊🤪～啊🤪～啊咦😬啊咦😬啊→啊↑啊↓😨啊😰～嗯💥嗯嗯👿滴滴😈唔😱嘟⬅️嘟↖️嘟⬆️嘟↗️嘟➡️嘟↘️嘟⬇️</color>"
+            };
+        }
+
+        const memorablePerformance = window.INFO.ExtraArguments.MemorablePerformance;
 
         document.getElementById("Avatar").style.backgroundImage = `url('${GetAvatarFilePath()}')`;
         document.getElementById("UserBasicInfoBlock").style.backgroundImage = `url('${GetUserBackgroundBlur()}')`;
@@ -588,11 +716,37 @@
             now.getHours() > 12 ? "PM" : "AM"}`;
         const synced = FormatDateOffset(new Date(window.INFO.SaveModificationDate), now);
 
-        document.getElementById("DateTime").textContent = `Generated ${generated}, synced ${synced} ago.`;
+        document.getElementById("DateTime").textContent = `Generated at ${generated}, synced ${synced} ago.`;
 
         for (const diff in Difficulty) {
-            SetupStatisticBlock(diff + "Statistics", diff)
+            SetupStatisticBlock(diff + "Statistics", diff);
+        }
 
+        document.getElementById("MemorablePerformanceImage").style.backgroundImage = `url("${GetRecordLowResIllustrationPath(memorablePerformance)}")`;
+        document.getElementById("MemorablePerformanceRank").firstElementChild.src = GetRecordRankImagePath(memorablePerformance);
+        document.getElementById("MemorablePerformance").appendChild(ConvertUnityRichText(window.INFO.ExtraArguments.Thoughts, 16));
+        document.getElementById("MemorablePerformanceFirstLine").textContent = `${memorablePerformance.Score} / ${memorablePerformance.Accuracy.toFixed(GetUserPrecisionInt())}%`;
+        document.getElementById("MemorablePerformanceSecondLine").textContent =
+            `${memorablePerformance.Rks.toFixed(GetUserPrecisionInt())} / ${memorablePerformance.ChartConstant.toFixed(1)} ${RecordDifficultyToName[memorablePerformance.Difficulty]}`;
+
+        const main = document.getElementById("Main");
+
+        const circleCount = RandomNumber(10, 30);
+        for (let i = 0; i < circleCount; i++) {
+            const x = RandomNumber(0, 100);
+            const y = RandomNumber(0, 100);
+            const size = RandomNumber(5, 20);
+            const opacity = RandomNumber(0, 0.2);
+
+            const element = document.createElement("div");
+            element.className = "Circles";
+            element.style.top = `${y - size / 2}%`;
+            element.style.left = `${x - size / 2}%`;
+            element.style.width = `${size}vw`;
+            element.style.height = `${size}vw`;
+            element.style.backgroundColor = `rgba(255,255,255,${opacity})`;
+
+            main.appendChild(element);
         }
 
         SetReady(true);
