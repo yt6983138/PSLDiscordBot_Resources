@@ -695,8 +695,6 @@
             };
         }
 
-        const memorablePerformance = window.INFO.ExtraArguments.MemorablePerformance;
-
         document.getElementById("Avatar").style.backgroundImage = `url('${GetAvatarFilePath()}')`;
         document.getElementById("UserBasicInfoBlock").style.backgroundImage = `url('${GetUserBackgroundBlur()}')`;
         document.getElementById("UserNickBlock").appendChild(ConvertUnityRichText(GetUserNickName(), 24));
@@ -722,12 +720,19 @@
             SetupStatisticBlock(diff + "Statistics", diff);
         }
 
+        const memorablePerformance = window.INFO.ExtraArguments.MemorablePerformance;
+        const thoughts = window.INFO.ExtraArguments.Thoughts;
+
+        if (memorablePerformance && thoughts) {
         document.getElementById("MemorablePerformanceImage").style.backgroundImage = `url("${GetRecordLowResIllustrationPath(memorablePerformance)}")`;
         document.getElementById("MemorablePerformanceRank").firstElementChild.src = GetRecordRankImagePath(memorablePerformance);
-        document.getElementById("MemorablePerformance").appendChild(ConvertUnityRichText(window.INFO.ExtraArguments.Thoughts, 16));
+        document.getElementById("MemorablePerformance").appendChild(ConvertUnityRichText(thoughts, 16));
         document.getElementById("MemorablePerformanceFirstLine").textContent = `${memorablePerformance.Score} / ${memorablePerformance.Accuracy.toFixed(GetUserPrecisionInt())}%`;
         document.getElementById("MemorablePerformanceSecondLine").textContent =
             `${memorablePerformance.Rks.toFixed(GetUserPrecisionInt())} / ${memorablePerformance.ChartConstant.toFixed(1)} ${RecordDifficultyToName[memorablePerformance.Difficulty]}`;
+        } else {
+            document.getElementById("MemorablePerformance").style.display = "none";
+        }
 
         const main = document.getElementById("Main");
 
