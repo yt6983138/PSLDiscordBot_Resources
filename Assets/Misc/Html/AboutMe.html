@@ -781,12 +781,12 @@
         clearCount -= fcCount;
         fcCount -= apCount;
 
-        SetupStatisticBar(ap, 46, totalCount, apCount);
-        SetupStatisticBar(fc, 29, totalCount, fcCount);
-        SetupStatisticBar(clear, 12, totalCount, clearCount);
+        SetupStatisticBar(ap, 46, totalCount, apCount, "AP");
+        SetupStatisticBar(fc, 29, totalCount, fcCount, "FC");
+        SetupStatisticBar(clear, 12, totalCount, clearCount, "Cleared");
     }
 
-    function SetupStatisticBar(element, verticalLineLength, totalCount, actualCount) {
+    function SetupStatisticBar(element, verticalLineLength, totalCount, actualCount, name) {
         const verticalLine = element.querySelector(".VerticalLine");
         const bottomLine = verticalLine.querySelector(".BottomLine");
         const text = bottomLine.querySelector("p");
@@ -801,7 +801,7 @@
             return;
         }
 
-        text.textContent = `${FloatToUserPrecisionString(percent)}% ${actualCount}/${totalCount}`;
+        text.textContent = `${name} ${FloatToUserPrecisionString(percent)}% ${actualCount}/${totalCount}`;
     }
 
     Initialize();
