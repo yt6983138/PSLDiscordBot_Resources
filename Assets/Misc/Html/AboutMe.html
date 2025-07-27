@@ -704,7 +704,7 @@
         document.getElementById("CMImage").style.backgroundImage = `url('${GetCMBackgroundFilePath()}')`;
         document.getElementById("CMText").textContent = GetCMLevel();
 
-        if (GetCMLevel() === 0) document.getElementById("CMImage").parentElement.delete();
+        if (GetCMLevel() === 0) document.getElementById("CMImage").parentElement.remove();
 
         document.getElementById("Left").appendChild(ConvertUnityRichText(INFO.GameUserInfo.Intro, 16));
         const now = new Date(Date.now());
