@@ -102,7 +102,7 @@ function MakeExampleValue() {
         "GameUserInfo": {
             "Version": 1,
             "ShowUserId": true,
-            "Intro": "amongus sus\n\n69420",
+            "Intro": "amongus sus\n\n69420\nreally looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong string",
             "AvatarId": "もぺもぺ1",
             "BackgroundId": "Aleph-0-"
         },
