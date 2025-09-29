@@ -329,12 +329,23 @@
                             "Rks": 15.300000190734863
                         }
                     ]
-                }
+                },
+                "SearchRanks": [ // this should be sorted
+                    {
+                        "SongId": "Chronostasis.黒皇帝",
+                        "Alias": ["chrono", "cs"],
+                        "Score": 0.99
+                    },
+                    {
+                        "SongId": "Nima.Test", // just testing
+                        "Alias": ["nima", "test"],
+                        "Score": 0.8
+                    }
+                ]
             }
         }
 
-        let id = undefined;
-        for (id in window.INFO.ExtraArguments.Searched) break; // search first
+        let id = window.INFO.ExtraArguments.SearchRanks[0].SongId;
         let searchedFirstRecords = window.INFO.ExtraArguments.Searched[id];
 
         document.body.style.backgroundImage = "url('" + GetUserBackgroundBlur() + "')";
@@ -344,7 +355,7 @@
 
         let table = document.getElementById("Scores");
         for (let i = 0; i < 4; i++) {
-            if (id !== "Chronostasis.黒皇帝" && window.INFO_MAP_DIFFICULTY[id][i] === 0) break;
+            if (id !== "Chronostasis.黒皇帝" && window.INFO_MAP_DIFFICULTY[id][i] === 0) break; // easter egg
 
             let record = SearchByDifficultyInRecords(searchedFirstRecords, i);
 
